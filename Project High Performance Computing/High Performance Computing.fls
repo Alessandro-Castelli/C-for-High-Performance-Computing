@@ -1,7 +1,7 @@
-PWD c:\Users\ales2\Desktop\Advance Programming in C\C++ for High-Performance Computing
+PWD c:\Users\ales2\Desktop\Advance Programming in C\C++ for High-Performance Computing\Project High Performance Computing
 INPUT C:\Users\ales2\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\ales2\Desktop\Advance Programming in C\C++ for High-Performance Computing\C++ for High-Performance Computing.tex
-OUTPUT C++ for High-Performance Computing.log
+INPUT c:\Users\ales2\Desktop\Advance Programming in C\C++ for High-Performance Computing\Project High Performance Computing\High Performance Computing.tex
+OUTPUT High Performance Computing.log
 INPUT C:\Users\ales2\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\ales2\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\ales2\MiKTeX\tex\latex\base\size11.clo
@@ -104,12 +104,73 @@ INPUT C:\Users\ales2\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
 INPUT C:\Users\ales2\MiKTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
 INPUT C:\Users\ales2\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\ales2\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\logreq\logreq.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\logreq\logreq.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\logreq\logreq.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\logreq\logreq.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\logreq\logreq.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\base\ifthen.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-dm.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-dm.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-dm.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-compat.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-compat.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-compat.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.def
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\bbx\numeric.bbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\bbx\numeric.bbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\bbx\numeric.bbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\bbx\standard.bbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\bbx\standard.bbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\bbx\standard.bbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\cbx\numeric.cbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\cbx\numeric.cbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\cbx\numeric.cbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\biblatex.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\l3kernel\expl3.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\l3kernel\expl3.sty
 INPUT C:\Users\ales2\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\ales2\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\C++ for High-Performance Computing.aux
-INPUT .\C++ for High-Performance Computing.aux
-INPUT C++ for High-Performance Computing.aux
-OUTPUT C++ for High-Performance Computing.aux
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\blx-case-expl3.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\listings.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\listings.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\xcolor\xcolor.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics-cfg\color.cfg
+INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\mathcolor.ltx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstlang1.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT C:\Users\ales2\MiKTeX\tex\latex\listings\lstmisc.sty
+INPUT .\High Performance Computing.aux
+INPUT .\High Performance Computing.aux
+INPUT High Performance Computing.aux
+OUTPUT High Performance Computing.aux
 INPUT C:\Users\ales2\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ales2\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\ales2\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -119,21 +180,23 @@ INPUT C:\Users\ales2\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ales2\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ales2\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\color.sty
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\color.sty
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics-cfg\color.cfg
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT C:\Users\ales2\MiKTeX\tex\latex\graphics\mathcolor.ltx
-INPUT .\C++ for High-Performance Computing.out
-INPUT .\C++ for High-Performance Computing.out
-INPUT C++ for High-Performance Computing.out
-INPUT C++ for High-Performance Computing.out
-OUTPUT C++ for High-Performance Computing.pdf
-INPUT .\C++ for High-Performance Computing.out
-INPUT .\C++ for High-Performance Computing.out
-OUTPUT C++ for High-Performance Computing.out
+INPUT .\High Performance Computing.out
+INPUT .\High Performance Computing.out
+INPUT High Performance Computing.out
+INPUT High Performance Computing.out
+OUTPUT High Performance Computing.pdf
+INPUT .\High Performance Computing.out
+INPUT .\High Performance Computing.out
+OUTPUT High Performance Computing.out
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\lbx\english.lbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\lbx\english.lbx
+INPUT C:\Users\ales2\MiKTeX\tex\latex\biblatex\lbx\english.lbx
+OUTPUT High Performance Computing.bcf
+INPUT High Performance Computing.bbl
+INPUT .\High Performance Computing.bbl
+INPUT .\High Performance Computing.bbl
+INPUT .\High Performance Computing.bbl
+INPUT High Performance Computing.bbl
 INPUT .\aau.png
 INPUT .\aau.png
 INPUT .\aau.png
@@ -155,58 +218,77 @@ INPUT C:\Users\ales2\MiKTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\ales2\MiKTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\ales2\MiKTeX\tex\latex\base\t1cmtt.fd
 INPUT C:\Users\ales2\MiKTeX\fonts\tfm\jknappen\ec\ectt1095.tfm
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omlztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omlztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omlztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omsztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omsztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omsztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omxztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omxztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omxztmcm.fd
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ptm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ptm.fd
-INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ptm.fd
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
 INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri8t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmr8t.tfm
 INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
 INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
 INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
 INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
-INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\zptmcm7t.vf
-INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\symbol\psyr.tfm
 INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmri8t.vf
 INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri8r.tfm
-INPUT .\C++ for High-Performance Computing.bbl
-INPUT .\C++ for High-Performance Computing.bbl
-INPUT C++ for High-Performance Computing.bbl
-INPUT C++ for High-Performance Computing.aux
-INPUT .\C++ for High-Performance Computing.out
-INPUT .\C++ for High-Performance Computing.out
+INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmr8t.vf
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ts1ptm.fd
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmr8c.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmr8c.vf
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb8t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmb8t.vf
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb8r.tfm
+INPUT .\ClassType.png
+INPUT .\ClassType.png
+INPUT .\ClassType.png
+INPUT .\ClassType.png
+INPUT .\ClassType.png
+INPUT .\ClassType.png
+INPUT .\ClassType.png
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmrc8t.tfm
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7t.tfm
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omlztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7m.tfm
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omsztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7y.tfm
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\omxztmcm.fd
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\zptmcm7v.tfm
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Users\ales2\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmb7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmri7t.tfm
+INPUT C:\Users\ales2\MiKTeX\fonts\vf\adobe\times\ptmrc8t.vf
+INPUT C:\Users\ales2\MiKTeX\fonts\tfm\adobe\times\ptmr8r.tfm
+INPUT High Performance Computing.aux
+INPUT .\High Performance Computing.out
+INPUT .\High Performance Computing.out
+INPUT High Performance Computing.run.xml
+OUTPUT High Performance Computing.run.xml
 INPUT C:\Users\ales2\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
 INPUT C:\Users\ales2\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1095.pk
-INPUT C:\Users\ales2\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
-INPUT C:\Users\ales2\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\ales2\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\ales2\MiKTeX\fonts\type1\urw\times\utmb8a.pfb
 INPUT C:\Users\ales2\MiKTeX\fonts\type1\urw\times\utmr8a.pfb
