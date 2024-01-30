@@ -95,9 +95,7 @@
         \item \textbf{Integrazione di moduli esterni:} La riflessione semplifica l'integrazione di moduli esterni o librerie in un'applicazione senza la necessità di adattare il codice sorgente esistente. Ciò rende più facile aggiungere, rimuovere o sostituire funzionalità senza dover ricompilare l'applicazione principale.
         \item \textbf{Riusabilità del codice:} La riflessione può favorire la scrittura di codice più generico e riusabile. Nel caso di funzioni come "init\_lib()", la capacità di chiamare dinamicamente funzioni in base al loro nome semplifica l'utilizzo di moduli senza dover scrivere codice specifico per ciascuna funzione.
         \item \textbf{Facilità nell'aggiornamento e manutenzione:} Se si utilizza la riflessione per gestire dinamicamente le funzionalità dell'applicazione, può diventare più semplice aggiornare o modificare parti dell'applicazione senza impattare altre parti del codice.
-
     \end{itemize}
-
     \paragraph{Riflessione: Idee su come può essere applicata}
     Il documento da alcune idee su come applicare la riflessione utilizzando diverse tecniche, di seguito troverai diversi contesti e casi d'uso in cui la riflessione viene implementata o sfruttata per ottenere determinati vantaggi o funzionalità.
     \begin{itemize}
@@ -160,7 +158,15 @@
     Dopo l'implementazione della libreria, sono stati condotti test al fine di valutare le prestazioni. Era atteso un calo di prestazioni, e l'obiettivo consisteva nel misurare l'incremento di tempo rispetto alle chiamate dirette. Ogni test coinvolgeva l'istanziazione dinamica di un oggetto e l'invocazione di un metodo su di esso, con cinque metodi che variavano nel numero di argomenti (da 1 a 5). I metodi sono stati invocati come chiamate dirette e virtuali, oltre che utilizzando la riflessione. Nel caso dell'uso della riflessione, l'istanza dell'oggetto è stata effettuata mediante metodi riflessivi. L'attenzione principale era focalizzata sul rilevamento del sovraccarico nell'uso della riflessione in confronto alle chiamate dirette, calcolando questo sovraccarico come il tempo aggiuntivo in percentuale rispetto alle chiamate dirette.
     Quello che è possibile osservare dai test è che il sovraccarico per la riflessione in C++ aumenta con il numero di argomenti. Questo è principalmente dovuto alla costruzione dinamica della lista degli argomenti, che comporta poche piccole allocazioni di memoria. 
     \subsection{My vision}
-    La mia visione
+    Lo sviluppo di questa libreria ha secondo me molti spunti interessanti. Di seguito elencherò alcuni punti che riassumono le mia vissione con dei possibili miglioramenti.
+    \begin{itemize}
+        \item \textbf{Arricchimento delle Funzionalità:} L'obiettivo primario è di arricchire la libreria di riflessione introducendo nuove funzionalità che ne amplifichino la potenza e l'estensibilità. In questo contesto, valutiamo attentamente l'inclusione di supporto per la gestione di attributi personalizzati, l'implementazione di una navigazione avanzata della gerarchia delle classi e lo sviluppo di strumenti per la manipolazione avanzata dei tipi.
+        \item \textbf{Ottimizzazione delle Performance:} Dedichiamo particolare attenzione all'ottimizzazione delle prestazioni con l'obiettivo di ridurre ulteriormente l'overhead introdotto durante l'invocazione di funzioni membro e l'accesso ai membri dati. Mantenendo un focus costante sull'efficienza, ci proponiamo di garantire che la libreria possa essere utilizzata in contesti ad alte prestazioni senza compromettere la sua efficienza.
+        \item \textbf{Integrazione con Tecnologie Esterne:} Esploriamo attivamente opportunità di integrazione con tecnologie e framework ampiamente adottati. La libreria potrebbe trarre beneficio da una maggiore compatibilità con sistemi di serializzazione/deserializzazione diffusi o ambienti di scripting, aprendo nuove possibilità di utilizzo in scenari complessi e eterogenei.
+        \item \textbf{Ampio Supporto per Compilatori:} Ci impegniamo a garantire che la libreria sia compatibile con una vasta gamma di compilatori C++. L'obiettivo è estendere il supporto oltre ai compilatori attualmente considerati, assicurando che la libreria sia accessibile a un pubblico più ampio di sviluppatori che utilizzano una varietà di ambienti di sviluppo.
+        \item \textbf{Documentazione Approfondita e Accessibile:} Investiamo nella creazione di una documentazione completa, chiara e accessibile. La documentazione sarà arricchita da esempi pratici, scenari d'uso dettagliati e spiegazioni tecniche. Questo sforzo mira a guidare gli sviluppatori, sia principianti che esperti, nell'uso efficace della libreria, contribuendo così alla sua adozione e successo nella community.
+        \item \textbf{Rigore nei Test e nella Validazione:} Implementiamo un sistema completo di test e validazione per garantire che la libreria funzioni correttamente in varie situazioni e configurazioni. Attraverso questo approccio rigoroso, miriamo a mantenere la stabilità e l'affidabilità della libreria nel tempo, fornendo agli sviluppatori la fiducia necessaria nell'integrazione e nell'uso della libreria.
+    \end{itemize}
 
 \section{How templates enable high-performance scientific computing in C++}
     Il linguaggio di programmazione C++ offre una potente struttura di templates, consentendo lo sviluppo di software flessibile senza sacrificare prestazioni. I templates permettono di definire classi e funzioni parametrizzate in termini di altri tipi e costanti. Questa caratteristica è fondamentale per la costruzione di codici scientifici astratti e ad alte prestazioni in C++. Il framework Pooma è citato come esempio, supportando il calcolo scientifico ad alte prestazioni e fornendo astrazioni matematiche e fisiche avanzate. 
@@ -218,6 +224,49 @@
 
     La conclusione sottolinea che l'approccio a tempo di compilazione, mediante classi template e motori, offre una soluzione più flessibile ed efficiente rispetto a un'implementazione a tempo di esecuzione basata su ereditarietà e funzioni virtuali. Questa analisi può essere utile per comprendere le scelte di progettazione nell'implementazione di array multidimensionali in contesti scientifici.
     \subsection{My Vision}
+    Nella mia visione personale, l'utilizzo dei template in C++ per il calcolo scientifico rappresenta un passo significativo verso la creazione di codice più flessibile, efficiente e facilmente manutenibile. L'approccio di parametrizzazione dei tipi offerto dai template consente agli sviluppatori di scrivere codice generico che può essere applicato a una vasta gamma di tipi di dati, contribuendo così alla creazione di librerie e framework riutilizzabili.
+    Il framework Pooma, come esemplificato nel paper, dimostra come l'uso intelligente dei template può fornire un'astrazione potente per il calcolo scientifico ad alte prestazioni. La possibilità di gestire la transizione tra esecuzione seriale e parallela su diverse piattaforme, inclusa la supercomputing, evidenzia l'adattabilità e la portabilità che i template possono offrire in contesti scientifici complessi.
+    Inoltre, l'analisi del polimorfismo a tempo di compilazione rispetto a quello a tempo di esecuzione sottolinea l'importanza di considerazioni di prestazioni e flessibilità durante la progettazione di sistemi scientifici. La capacità di effettuare ottimizzazioni durante la compilazione, grazie alla conoscenza statica dei tipi, può portare a un codice più efficiente e adattabile alle esigenze specifiche delle applicazioni scientifiche.
+    La mia visione sottolinea anche l'importanza di una comunità scientifica impegnata nel condividere best practices e esperienze nell'uso dei template. La collaborazione tra sviluppatori scientifici può contribuire alla creazione di linee guida e standard che facilitano l'adozione efficace dei template in vari contesti scientifici.
+
+    In sintesi, la mia visione riflette l'entusiasmo per il potenziale dei template in C++ nel campo del calcolo scientifico e la convinzione che questa tecnologia possa continuare a guidare l'evoluzione di soluzioni software innovative e performanti.
+
+\section{Conduit: A C++ Library for Best-effort High Performance Computing}
+Il documento introduce le sfide nello sviluppo di software per sfruttare efficacemente la capacità crescente di elaborazione parallela e distribuita. 
+Le tecniche tradizionali presuppongono la sincronizzazione tra esecuzione, comunicazione tra processi e gestione della memoria, ma ciò diventa costoso su larga scala. 
+Viene proposta la strategia della \textbf{computazione best-effort}, che rilassa i requisiti di sincronizzazione e affidabilità hardware in cambio di efficienza.
+
+La libreria \textbf{Conduit} in C++ si propone di fornire un'interfaccia preconfezionata per implementare software che utilizza la comunicazione best-effort tra thread e processi. 
+Il documento copre motivazioni, obiettivi, design e implementazione della libreria. I benchmark su problemi di colorazione di grafi e simulazioni di evoluzione digitale dimostrano che il modello best-effort di Conduit può migliorare l'efficienza di scaling e la qualità delle soluzioni.
+Viene introdotta l'idea di "computazione best-effort" dove si rilassano le dipendenze dati per ridurre la sincronizzazione, migliorando la scalabilità. Si menziona che gli algoritmi deterministici basati sulla sincronizzazione globale diventano costosi su sistemi di calcolo ad alte prestazioni. L'aspirazione alla scalabilità indefinita richiede operazioni asincrone, reti decentralizzate, componenti intercambiabili e degradazione graziosa in caso di guasti hardware.
+
+\subsection{Conduit Library}
+Conduit è una libreria C++ che mira ad integrarsi nei sistemi di programmazione parallela, fornendo un'interfaccia astratta di tipo best-effort agli sviluppatori.
+La Figura \ref{fig:Conduit} fornisce una panoramica schematica di Conduit.
+Quello che succede è che un Inlet e un Outlet possono scambiarsi messaggi tramite una procedura di comunicazione intra-thread, inter-thread o inter-processo, a seconda dello stato di runtime di un oggetto Duct sottostante e Conduit fornisce una libreria di implementazoine per fare ciò.
+
+L'oggetto \textit{Inlet} fornisce due metodi principali: \texttt{TryPut()} e \texttt{Put()}. Il metodo \texttt{TryPut()} è non bloccante e cerca di mettere in coda un messaggio per il corrispondente \textit{Outlet}. In caso di sovraccarico, il messaggio può essere eliminato. D'altra parte, il metodo \texttt{Put()} si blocca in condizioni di sovraccarico, attendendo finché lo spazio nel buffer non è disponibile per accodare il messaggio.
+
+Per quanto riguarda l'oggetto \textit{Outlet}, offre i metodi \texttt{TryStep()}, \texttt{Jump()} e \texttt{Step()}. I primi due metodi sono utilizzati per caricare il messaggio successivo o più recente, rispettivamente. Nel caso in cui non ci siano nuovi messaggi disponibili, verrà utilizzato l'ultimo messaggio ricevuto. Il metodo \texttt{Step()} si blocca fino a quando non viene ricevuto un nuovo messaggio.
+
+A livello di runtime, gli oggetti \textit{Duct} possono essere creati o modificati per gestire la comunicazione intra-thread, inter-thread o inter-processo.
+
+Oltre a questa interfaccia granulare a livello di connessione, Conduit fornisce un'interfaccia a livello di rete in cui l'utente definisce la propria computazione in termini di un grafo orientato.
+Conduit non solo offre un'interfaccia granulare a livello di connessione, ma fornisce anche un'interfaccia a livello di rete in cui gli utenti definiscono la propria computazione utilizzando un grafo orientato. In questa topologia, i nodi rappresentano elementi di simulazione, mentre gli archi indicano canali di comunicazione.
+La libreria assegna automaticamente nodi a thread disponibili su processi disponibili e istanzia i condotti corrispondenti. I singoli thread possono quindi elaborare liberamente gli aggiornamenti computazionali sui nodi loro assegnati, ricevendo contemporaneamente messaggi da nodi assegnati ad altri processi man mano che diventano disponibili. 
+Definire la logica del programma in termini di elementi di simulazione atomici che comunicano offre notevoli vantaggi in termini di programmabilità. Questo approccio consente la scrittura del codice in termini di interazioni tra oggetti intuitivi specifici del dominio  con la gestione automatica della mappatura sulle risorse hardware da parte del framework sottostante.
+Tuttavia, un'implementazione ingenua comporterebbe inefficienze significative, specialmente nella comunicazione inter-processo con un notevole overhead. 
+
+\subsection{Metodologie usate per valutare le prestazioni}
+Per verificare l'impatto sulle prestazioni dato dall'utilizzo della libreria Conduit sono stati fatti dei test che hanno seguito determinate metodologie.
+Vengono eseguiti due benchmark per confrontare l'approccio best-effort di Conduit con un modello sincrono tradizionale. 
+I benchmark vengono eseguiti sia in un contesto di memoria condivisa multithread che in un contesto distribuito multinode. 
+In ciascun contesto hardware, le prestazioni vengono valutate su due contesti algoritmici: un problema di colorazione di grafi distribuiti intensivo in comunicazione e una simulazione di evoluzione digitale intensiva in calcolo.
+
+Il benchmark relativo al problema di colorazione di grafi distribuiti è stato scelto per complementare il lavoro originale di sviluppo della libreria Conduit, al fine di supportare sistemi sperimentali su larga scala per lo studio dell'evoluzione aperta. Il benchmark relativo alla simulazione di evoluzione digitale è stato sviluppato per valutare le prestazioni della libreria in un contesto di calcolo intensivo.
+
+\subsection{Performance}
+
 \end{multicols*}
 
 \begin{figure}
@@ -225,6 +274,13 @@
     \includegraphics[width=0.5\linewidth]{ClassType.png}
     \caption{Metaclass hierarchy}
     \label{fig:ClassType}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\linewidth]{Conduit.png}
+    \caption{Conduit Scheme}
+    \label{fig:Conduit}
 \end{figure}
 
 \printbibliography\end{document}
