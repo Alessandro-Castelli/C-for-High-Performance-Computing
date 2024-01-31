@@ -60,129 +60,133 @@
 
 \begin{multicols*}{2}[\columnsep=1cm]
     
-    \section{Introduzione}
-    In questo elaborato, saranno analizzati e discussi tre articoli che trattano dell'utilizzo del linguaggio di programmazione \texttt{C++} nel contesto del calcolo ad alte prestazioni.
-    I tre articoli esaminano il tema da prospettive diverse. Gli articoli selezionati sono i seguenti:
-    \begin{enumerate}
-        \item \textit{C++ Reflection for High Performance Problem Solving Environments}~\cite{Article1}, reperibile al seguente link: \href{https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2058bb40e6b80504ba1084452fd9c126cd19f891}{https://citeseerx.ist.psu.edu}
-        \item \textit{How Templates Enable High-Performance Scientific Computing in C++}~\cite{Article2}, reperibile al seguente link: \href{https://ieeexplore.ieee.org/abstract/document/774843?casa_token=YqZfo7t12KoAAAAA:aUt-msPVNEAtzfVwO4h_-R_r7IPTFs7vHYHbAtsOdDE83PlNvB8gkNl5maWpHYBU5QkS3cUp0R8}{https://ieeexplore.ieee.org}
-        \item \textit{Conduit: A C++ Library for Best-Effort High Performance Computing}~\cite{Article3}, reperibile al seguente link: \href{https://dl.acm.org/doi/abs/10.1145/3449726.3463205}{https://dl.acm.org}
-    \end{enumerate}
-    
-    Ciascuno di questi documenti si occupa di affrontare problemi in ambienti ad alte prestazioni. In particolare, il primo articolo presenta un sistema di riflessione per il linguaggio C++, il quale consente la manipolazione dinamica di oggetti e funzioni del programma durante l'esecuzione. Il secondo articolo tratta dell'utilizzo del linguaggio C++ nello sviluppo di codice scientifico flessibile e ad alte prestazioni, sfruttando le potenti funzionalità dei template. Il terzo articolo introduce \texttt{Conduit}, una libreria C++ che fornisce un'interfaccia per implementare software che fa uso di comunicazione inter-thread e inter-processo a "miglior sforzo". Il concetto di "miglior sforzo" è una strategia che riduce la sincronizzazione e i requisiti di affidabilità dell'hardware, accettando il non determinismo in cambio di efficienza.
-    Nel seguito del documento, verranno esposti gli argomenti trattati nei singoli articoli insieme alle relative metodologie, risultati e considerazioni critiche sulle implementazioni proposte.
+    \section{Introduction}
+    In this paper, we will analyze and discuss three articles that delve into the usage of the \texttt{C++} programming language in the realm of high-performance computing.
 
-    \section{C++ Reflection for High Performance Problem Solving Environments}
-    L'articolo discute l'importanza degli Ambienti di Risoluzione dei Problemi (PSE), sistemi informatici che forniscono le risorse necessarie per risolvere specifiche classi di problemi. 
-    Tali PSE dovrebbero includere metodi avanzati di soluzione, selezione automatica o semi-automatica dei metodi, e la capacità di incorporare nuovi approcci.
-    Nel calcolo scientifico, i PSE devono affrontare compiti intensivi in termini di CPU, spesso sviluppati come componenti in linguaggi ad alte prestazioni. 
-    L'articolo sostiene che i PSE dovrebbero consentire il \textbf{dinamico accoppiamento di compiti}, con un'interfaccia utente grafica o uno scripting ambiente. 
-    Tuttavia, la mancanza di riflessione\footnote{
-        La riflessione nei linguaggi di programmazione indica la capacità di un programma di esaminare e modificare la sua struttura e comportamento durante l'esecuzione. In pratica, un linguaggio di programmazione riflessivo permette al programma di "osservare se stesso" e di apportare modifiche dinamiche alla sua esecuzione. Questo concetto si divide principalmente in riflessione di tipo, che riguarda l'analisi dinamica dei tipi di dati, e riflessione di dati, che si occupa della manipolazione dinamica dei dati durante l'esecuzione.} nei moderni linguaggi HPC porta gli sviluppatori di PSE a dipendere da linguaggi come Java, causando inconvenienti.
-    \textbf{L'articolo propone l'implementazione di funzionalità (di una libreria) di riflessione non invasiva e conformi agli standard in C++}, dimostrando che questo può essere fatto in modo efficiente. 
-    Confronta il sovraccarico della riflessione con altri metodi e suggerisce che la sua implementazione è l'unico modo per incorporare funzionalità di riflessione in C++ in modo conforme agli standard e non invasivo.
-    L'articolo discute i due tipi di riflessione a livello di codice: in fase di compilazione e in fase di esecuzione. La riflessione in fase di compilazione consente l'accesso alle informazioni sul tipo durante la compilazione, facilitando la programmazione generica, mentre la riflessione in fase di esecuzione offre la capacità di accedere dinamicamente alle informazioni sul tipo durante l'esecuzione del programma.
-    Mentre linguaggi come Java, C\# e Python supportano la riflessione come parte delle loro specifiche standard, C++ fornisce solo funzionalità limitate tramite le informazioni sul tipo in fase di esecuzione (RTTI). Visual C++ ha estensioni per la riflessione, ma con limitata portabilità. Per l'elaborazione ad alte prestazioni, Java e C\# sono limitati, mentre Fortran domina, ma C++ è preferito per il middleware.
-    La riflessione in fase di esecuzione richiede la generazione separata di metadati come codice C++ effettivo, poiché i compilatori C++ non generano automaticamente i metadati richiesti. L'articolo propone che C++ dovrebbe supportare la riflessione in modo standard e non intrusivo, e mostra come questo può essere fatto in modo efficiente.
+    The selected articles provide diverse perspectives on the topic, and they are as follows:
+    \begin{enumerate}
+        \item \textit{C++ Reflection for High Performance Problem Solving Environments}~\cite{Article1}, available at: \href{https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=2058bb40e6b80504ba1084452fd9c126cd19f891}{https://citeseerx.ist.psu.edu}
+        \item \textit{How Templates Enable High-Performance Scientific Computing in C++}~\cite{Article2}, available at: \href{https://ieeexplore.ieee.org/abstract/document/774843?casa_token=YqZfo7t12KoAAAAA:aUt-msPVNEAtzfVwO4h_-R_r7IPTFs7vHYHbAtsOdDE83PlNvB8gkNl5maWpHYBU5QkS3cUp0R8}{https://ieeexplore.ieee.org}
+        \item \textit{Conduit: A C++ Library for Best-Effort High Performance Computing}~\cite{Article3}, available at: \href{https://dl.acm.org/doi/abs/10.1145/3449726.3463205}{https://dl.acm.org}
+    \end{enumerate}
+
+    Each of these documents addresses challenges in high-performance environments. Specifically, the first article introduces a reflection system for the C++ language, enabling dynamic manipulation of program objects and functions during runtime. The second article discusses the use of C++ in developing flexible and high-performance scientific code, leveraging the powerful capabilities of templates. The third article introduces \texttt{Conduit}, a C++ library that provides an interface for implementing software using "best-effort" inter-thread and inter-process communication. The concept of "best-effort" is a strategy that reduces hardware synchronization and reliability requirements, accepting nondeterminism in exchange for efficiency.
+
+    In the following sections of the document, we will delve into the topics covered in each article, along with their methodologies, results, and critical considerations on the proposed implementations.
+
+    \section{C++ Reflection for High-Performance Problem Solving Environments}
+    The article discusses the importance of Problem Solving Environments (PSE), which are computing systems that provide the necessary resources to solve specific classes of problems. These PSEs should include advanced problem-solving methods, automatic or semi-automatic method selection, and the ability to incorporate new approaches. In scientific computing, PSEs must tackle CPU-intensive tasks, often developed as components in high-performance languages.
     
-    \paragraph{Esempio preso dal documento:}
-    Considera il seguente blocco di codice:
+    The article argues that PSEs should allow for \textbf{dynamic task coupling}, either through a graphical user interface or a scripting environment. However, the lack of reflection\footnote{Reflection in programming languages refers to the ability of a program to examine and modify its structure and behavior during runtime. In practice, a reflective programming language allows the program to "look at itself" and make dynamic changes to its execution. This concept is mainly divided into type reflection, which concerns the dynamic analysis of data types, and data reflection, which deals with the dynamic manipulation of data during execution.} in modern HPC languages leads PSE developers to rely on languages like Java, causing inconveniences.
+    \textbf{The article proposes the implementation of non-intrusive and standards-compliant reflection features (in a library) in C++}, demonstrating that this can be done efficiently. It compares the overhead of reflection with other methods and suggests that its implementation is the only way to incorporate reflection features in C++ in a standards-compliant and non-intrusive manner.
+    
+    The article discusses two types of code-level reflection: compile-time and runtime reflection. Compile-time reflection allows access to type information during compilation, facilitating generic programming, while runtime reflection provides the ability to dynamically access type information during program execution.
+    
+    While languages like Java, C\#, and Python support reflection as part of their standard specifications, C++ provides only limited functionality through runtime type information (RTTI). Visual C++ has extensions for reflection but with limited portability. For high-performance computing, Java and C\# are limited, Fortran dominates, but C++ is preferred for middleware.
+    
+    Runtime reflection requires the separate generation of metadata as actual C++ code since C++ compilers do not automatically generate the required metadata. The article proposes that C++ should support reflection in a standard and non-intrusive way, and demonstrates how this can be efficiently achieved.
+        
+    \paragraph{Example taken from the document:}
+    Consider the following code block:
     \begin{lstlisting}
         classType = ClassType::getClass("Service1");
         obj = classType.createInstance();
         obj.invoke("method1");
     \end{lstlisting}
-
-    L'uso della riflessione consente di incorporare dinamicamente moduli esistenti in un'applicazione in modo dinamico e flessibile. Ad esempio, considerando una funzione come \texttt{init\_lib()}, di solito richiederebbe la scrittura di codice specifico, ma con la riflessione, è possibile specificare il nome della funzione in un file di configurazione, consentendo la chiamata dinamica senza la necessità di scrivere nuovo codice o ricompilare. Questo approccio si estende anche ad altre funzioni del modulo, consentendo un incollaggio automatico tra moduli mediante l'uso di un'ontologia o una descrizione semantica. La riflessione diventa così uno strumento potente per lo sviluppo di codice riutilizzabile, semplificando il processo di integrazione di moduli esistenti in un'applicazione più ampia. Rendendo "Service1" e "method1" parametri configurabili, questo codice potrebbe essere utilizzato per invocare qualsiasi metodo.
-    I maggiori vantaggi in questo sarebbero quindi:
+    
+    The use of reflection allows dynamically incorporating existing modules into an application in a dynamic and flexible manner. For instance, considering a function like \texttt{init\_lib()}, it would typically require writing specific code, but with reflection, one can specify the function name in a configuration file, enabling dynamic invocation without the need to write new code or recompile. This approach extends to other functions of the module, allowing automatic glueing between modules through the use of an ontology or semantic description. Reflection thus becomes a powerful tool for developing reusable code, simplifying the process of integrating existing modules into a larger application. By making "Service1" and "method1" configurable parameters, this code could be used to invoke any method.
+    
+    The major advantages in this are:
     \begin{itemize}
-        \item \textbf{Configurabilità dinamica:} Utilizzando la riflessione, è possibile specificare dinamicamente quali classi e metodi devono essere utilizzati senza dover modificare il codice sorgente. Ad esempio, nel blocco di codice fornito, il nome della classe ("Service1") e il nome del metodo ("method1") possono essere specificati in un file di configurazione anziché nel codice.
-        \item \textbf{Integrazione di moduli esterni:} La riflessione semplifica l'integrazione di moduli esterni o librerie in un'applicazione senza la necessità di adattare il codice sorgente esistente. Ciò rende più facile aggiungere, rimuovere o sostituire funzionalità senza dover ricompilare l'applicazione principale.
-        \item \textbf{Riusabilità del codice:} La riflessione può favorire la scrittura di codice più generico e riusabile. Nel caso di funzioni come "init\_lib()", la capacità di chiamare dinamicamente funzioni in base al loro nome semplifica l'utilizzo di moduli senza dover scrivere codice specifico per ciascuna funzione.
-        \item \textbf{Facilità nell'aggiornamento e manutenzione:} Se si utilizza la riflessione per gestire dinamicamente le funzionalità dell'applicazione, può diventare più semplice aggiornare o modificare parti dell'applicazione senza impattare altre parti del codice.
+        \item \textbf{Dynamic Configurability:} Using reflection, it's possible to dynamically specify which classes and methods should be used without modifying the source code. For example, in the provided code block, the class name ("Service1") and method name ("method1") can be specified in a configuration file rather than in the code.
+        \item \textbf{Integration of External Modules:} Reflection simplifies the integration of external modules or libraries into an application without the need to adapt existing source code. This makes it easier to add, remove, or replace functionality without recompiling the main application.
+        \item \textbf{Code Reusability:} Reflection can promote writing more generic and reusable code. In the case of functions like "init\_lib()", the ability to dynamically call functions based on their name simplifies the usage of modules without writing specific code for each function.
+        \item \textbf{Ease of Update and Maintenance:} If reflection is used to dynamically manage application features, updating or modifying parts of the application can become simpler without impacting other parts of the code.
     \end{itemize}
-    \paragraph{Riflessione: Idee su come può essere applicata}
-    Il documento da alcune idee su come applicare la riflessione utilizzando diverse tecniche, di seguito troverai diversi contesti e casi d'uso in cui la riflessione viene implementata o sfruttata per ottenere determinati vantaggi o funzionalità.
+    \paragraph{Reflection: Ideas on How It Can Be Applied}
+    The document provides various ideas on how to apply reflection using different techniques. Below, you will find different contexts and use cases where reflection is implemented or leveraged to achieve specific advantages or functionalities.
+    
     \begin{itemize}
-    \item {Serializzazione:}
-    Il processo di serializzazione, che consiste nel convertire lo stato di un oggetto in una sequenza di byte e successivamente deserializzarlo, è un metodo comune per la comunicazione tra applicazioni poco accoppiate. 
-    Nel contesto di un PSE, questa sequenza di byte può essere impiegata per trasferire dati dall'output di un'attività all'input di un'altra. 
-    Utilizzando la riflessione, il mittente può serializzare dinamicamente lo stato di un oggetto e inviarlo al ricevente, il quale può creare gli oggetti dinamicamente basandosi sulle loro descrizioni e popolarli con le informazioni sullo stato corrispondente. 
-    \item {Interfaccia a un Ambiente di Scripting:}
-    Nel contesto della riflessione e dell'interfaccia a un ambiente di scripting, l'obiettivo è consentire agli utenti di uno scripting language, come Python, di utilizzare funzionalità implementate in linguaggi ad alte prestazioni come C, C++ o Fortran senza la necessità di riscrivere completamente il codice in uno scripting language.
-    Le librerie ad alte prestazioni, scritte in linguaggi come C, C++ o Fortran, sono spesso utilizzate per compiti computazionali intensivi o per ottimizzare le prestazioni. Tuttavia, l'accesso diretto a queste librerie da parte di utenti che preferiscono linguaggi di scripting come Python potrebbe essere complesso a causa delle differenze nella gestione della memoria, nella sintassi e nella struttura dei linguaggi.
-    La riflessione viene utilizzata per creare un'interfaccia tra queste librerie e l'ambiente di scripting. Ciò significa che, anziché richiedere agli utenti di scripting di scrivere wrapper o bindings complessi per chiamare le funzioni di queste librerie, la riflessione viene impiegata per fornire un meccanismo più automatico e meno oneroso.    
-    \item {Istanziamento di Oggetti:}
-    La riflessione è impiegata per risolvere il problema dell'istanziamento polimorfico degli oggetti, offrendo un'alternativa alla necessità di avere un metodo di fabbrica specifico per ogni classe. Questo approccio rende il processo di istanziazione più flessibile e meno intrusivo.
-    Nel contesto dell'istanziamento polimorfico, la pratica comune è utilizzare il "factory method pattern", che richiede che ogni classe candidata implementi un metodo dedicato per la creazione di un nuovo oggetto del tipo richiesto. Questa procedura può risultare onerosa e intrusiva, specialmente quando si lavora con nuove classi o con classi già esistenti che devono essere adattate.
-    Con l'impiego della riflessione, non sono richiesti i vincoli del "factory method pattern". Invece, è possibile istanziare gli oggetti dinamicamente, senza la necessità di implementare metodi di fabbrica specifici.
+        \item \textbf{Serialization:}
+        The serialization process, which involves converting the state of an object into a sequence of bytes and subsequently deserializing it, is a common method for communication between loosely coupled applications. In the context of a PSE, this byte sequence can be used to transfer data from the output of one task to the input of another. By using reflection, the sender can dynamically serialize the state of an object and send it to the receiver, who can dynamically create objects based on their descriptions and populate them with corresponding state information.
+        
+        \item \textbf{Scripting Environment Interface:}
+        In the context of reflection and interfacing with a scripting environment, the goal is to allow users of a scripting language, such as Python, to use functionalities implemented in high-performance languages like C, C++, or Fortran without the need to completely rewrite the code in a scripting language. High-performance libraries, written in languages like C, C++, or Fortran, are often used for intensive computational tasks or performance optimization. However, direct access to these libraries by users who prefer scripting languages like Python might be complex due to differences in memory management, syntax, and language structure. Reflection is used to create an interface between these libraries and the scripting environment. Instead of requiring scripting users to write complex wrappers or bindings to call functions from these libraries, reflection is employed to provide a more automatic and less burdensome mechanism.
+    
+        \item \textbf{Object Instantiation:}
+        Reflection is employed to address the issue of polymorphic object instantiation, providing an alternative to the need for a specific factory method for each class. This approach makes the instantiation process more flexible and less intrusive. In the context of polymorphic instantiation, the common practice is to use the factory method pattern, which requires each candidate class to implement a dedicated method for creating a new object of the required type. This procedure can be cumbersome and intrusive, especially when working with new classes or existing classes that need adaptation. With the use of reflection, the constraints of the factory method pattern are not required. Instead, objects can be instantiated dynamically without the need to implement specific factory methods.
     \end{itemize}
-    \paragraph{Obiettivi della Libreria di Riflessione in C++}
 
+    \paragraph{Objectives of the Reflection Library in C++}
     \begin{enumerate}
-        \item \textbf{Accesso a Runtime ai Membri:} Fornire la possibilità di accedere a runtime alle funzioni membro e ai membri di dati di una classe, consentendo l'invocazione di funzioni membro e la lettura/scrittura di membri di dati.
+        \item \textbf{Runtime Access to Members:} Provide the ability to access class member functions and data members at runtime, enabling the invocation of member functions and reading/writing of data members.
     
-        \item \textbf{Completezza:} La libreria dovrebbe offrire informazioni complete sulle classi e i loro membri, consentendo un accesso dettagliato.
+        \item \textbf{Completeness:} The library should offer comprehensive information about classes and their members, allowing detailed access.
     
-        \item \textbf{Conformità agli Standard:} Essere conforme allo standard ISO C++, garantendo la portabilità della libreria senza dipendere da caratteristiche non standard.
+        \item \textbf{Standard Compliance:} Be compliant with the ISO C++ standard, ensuring the portability of the library without relying on non-standard features.
     
-        \item \textbf{Efficienza:} Ridurre al minimo l'overhead dell'accesso alle classi e ai loro membri attraverso la riflessione. L'utilizzo di modelli C++ per registrare la maggior parte dei metadati a compile time contribuisce a garantire un codice risultante efficiente.
+        \item \textbf{Efficiency:} Minimize the overhead of accessing classes and their members through reflection. The use of C++ templates to record most metadata at compile-time contributes to ensuring efficient resulting code.
     
-        \item \textbf{Non Intrusività:} Implementare la riflessione senza richiedere modifiche al codice esistente. Evitare l'aggiunta di annotazioni speciali alle classi esistenti per garantire una facile integrazione con il codice preesistente e ridurre il rischio di errori nelle sezioni di meta-informazioni.
+        \item \textbf{Non-Intrusiveness:} Implement reflection without requiring modifications to existing code. Avoid adding special annotations to existing classes to ensure easy integration with existing code and reduce the risk of errors in metadata sections.
     \end{enumerate}
 
-    \subsection{Implementazione della libreria di riflessione in C++}
-    La libreria è strutturata con un nucleo di classi di base e un insieme di classi generate per gestire le informazioni specifiche del tipo. Queste classi di metadati specifici del tipo vengono create mediante l'analisi delle classi di destinazione fornite dall'utente e la successiva elaborazione degli alberi sintattici. Questo approccio ci consente di memorizzare e presentare in modo efficiente le informazioni di riflessione senza essere invasivi e garantendo la conformità agli standard del linguaggio C++.
-    \subparagraph*{Metaclasses}
+    \subsection{Implementation of the Reflection Library in C++}
+    The library is structured with a core of basic classes and a set of generated classes to handle type-specific information. These type-specific metadata classes are created by parsing user-provided target classes and processing their syntax trees. This approach allows us to efficiently store and present reflection information without being intrusive and ensuring compliance with C++ language standards.
+    
+    \paragraph{Metaclasses}
     \texttt{ClassType} è la metaclasse utilizzata per rappresentare classi definite dall'utente. 
     Queste classi derivano da una classe più generica chiamata \texttt{Type} (Guarda figura \ref*{fig:ClassType}).
     
-    \texttt{ClassType}, insieme alle sue classi di supporto, fornisce le seguenti caratteristiche:
+    \texttt{ClassType}, along with its supporting classes, provides the following features:
         \begin{itemize}
-            \item Nome e tipo
-            \item Lista di membri dati e funzioni membro
-            \item Interfaccia di istanziazione
-            \item Informazioni sull'ereditarietà
+            \item Name and type
+            \item List of data members and member functions
+            \item Instantiation interface
+            \item Inheritance information
         \end{itemize}
-    Dopo aver creato un'istanza di \texttt{ClassType}, l'oggetto di destinazione effettivo può essere creato.
-    Gli altri tipi derivati, \texttt{FundamentalType}, \texttt{ArrayType} e \texttt{PointerType}, come suggeriscono i loro nomi, sono utilizzati per rappresentare tipi primitivi (ad esempio, integer, double), array e puntatori.
+    After creating an instance of \texttt{ClassType}, the actual target object can be instantiated.
+    The other derived types, \texttt{FundamentalType}, \texttt{ArrayType}, and \texttt{PointerType}, as their names suggest, are used to represent primitive types (e.g., integer, double), arrays, and pointers.
 
-    \paragraph{Member Classes}
-    Ci sono due tipi di classi membro, ovvero membri dati e funzioni membro. Queste encapsulano i membri di una classe e forniscono mezzi per accedervi in modo indiretto, dato il loro nome a tempo di esecuzione. Invece di mantenere l'offset al membro encapsulato, ogni classe membro mantiene un puntatore al suo rispettivo membro dati o funzione membro. Ciò assicura che questa libreria sia completamente conforme allo standard C++.
-    \subparagraph*{Data Members}
-    Ogni membro dati in una classe è rappresentato da un oggetto DataMember. Questo oggetto contiene informazioni come nome e tipo.
-    Il metodo ref() restituisce un riferimento all'oggetto rappresentato, consentendo al programma di manipolarlo come se avesse accesso diretto al membro dati.
-    BoundDataMember è consapevole dell'oggetto associato, eliminando la necessità di passare un riferimento a classAObj. I membri dati vincolati sono ora completamente indipendenti dal tipo sottostante, rendendoli adatti a codice completamente generico.
+    \subsection{Member Classes}
+    There are two types of member classes, namely, data members and member functions. These encapsulate the members of a class and provide means to access them indirectly, given their name at runtime. Instead of maintaining the offset to the encapsulated member, each member class keeps a pointer to its respective data member or member function. This ensures that this library is fully compliant with the C++ standard.
+    \subsubsection*{Data Members}
+    Each data member in a class is represented by a DataMember object. This object contains information such as name and type.
+    The ref() method returns a reference to the represented object, allowing the program to manipulate it as if it had direct access to the data member.
+    BoundDataMember is aware of the associated object, eliminating the need to pass a reference to classAObj. Bound data members are now completely independent of the underlying type, making them suitable for fully generic code.
+    \subsubsection*{Member Functions}
+    Member functions are represented by the \texttt{MemberFunction} classes, providing information such as name, return type, and additional interfaces.
+    The arguments of member functions are handled as a vector of generic Type objects, allowing the representation of fundamental types, pointers, arrays, and user-defined classes.
+    Invocation of member functions can occur in two ways: one requires sending arguments individually with a pointer to the corresponding instance, and the other accepts a vector of arguments.
 
-    \subparagraph*{Member Functions}
-    Le funzioni membro sono rappresentate dalle classi \texttt{MemberFunction}, che forniscono informazioni come nome, tipo di ritorno e interfacce aggiuntive.
-    Gli argomenti delle funzioni membro sono gestiti come un vettore di oggetti generici di tipo (Type), consentendo la rappresentazione di tipi fondamentali, puntatori, array e classi definite dall'utente.
-    L'invocazione di funzioni membro può avvenire in due modi: uno richiede l'invio degli argomenti singolarmente con un puntatore all'istanza corrispondente, l'altro accetta un vettore di argomenti.
-
-    \paragraph{Performance}
-    Dopo l'implementazione della libreria, sono stati condotti test al fine di valutare le prestazioni. Era atteso un calo di prestazioni, e l'obiettivo consisteva nel misurare l'incremento di tempo rispetto alle chiamate dirette. Ogni test coinvolgeva l'istanziazione dinamica di un oggetto e l'invocazione di un metodo su di esso, con cinque metodi che variavano nel numero di argomenti (da 1 a 5). I metodi sono stati invocati come chiamate dirette e virtuali, oltre che utilizzando la riflessione. Nel caso dell'uso della riflessione, l'istanza dell'oggetto è stata effettuata mediante metodi riflessivi. L'attenzione principale era focalizzata sul rilevamento del sovraccarico nell'uso della riflessione in confronto alle chiamate dirette, calcolando questo sovraccarico come il tempo aggiuntivo in percentuale rispetto alle chiamate dirette.
-    Quello che è possibile osservare dai test è che il sovraccarico per la riflessione in C++ aumenta con il numero di argomenti. Questo è principalmente dovuto alla costruzione dinamica della lista degli argomenti, che comporta poche piccole allocazioni di memoria. 
-    \subsection{My vision}
-    Lo sviluppo di questa libreria ha secondo me molti spunti interessanti. Di seguito elencherò alcuni punti che riassumono le mia vissione con dei possibili miglioramenti.
+    \subsection{Performance}
+    After the implementation of the library, tests were conducted to evaluate its performance. A performance drop was expected, and the goal was to measure the time increase compared to direct calls. Each test involved the dynamic instantiation of an object and the invocation of a method on it, with five methods varying in the number of arguments (from 1 to 5). The methods were invoked as both direct and virtual calls, as well as using reflection. In the case of reflection usage, the object instance was created using reflective methods. The main focus was on detecting the overhead in reflection usage compared to direct calls, calculating this overhead as the additional time in percentage compared to direct calls.
+    
+    What can be observed from the tests is that the overhead for reflection in C++ increases with the number of arguments. This is mainly due to the dynamic construction of the argument list, which involves a few small memory allocations.
+    
+    \subsection{My Vision}
+    The development of this library, in my opinion, presents several interesting insights. Below, I will list some points summarizing my vision with potential improvements.
+    
     \begin{itemize}
-        \item \textbf{Arricchimento delle Funzionalità:} L'obiettivo primario è di arricchire la libreria di riflessione introducendo nuove funzionalità che ne amplifichino la potenza e l'estensibilità. In questo contesto, valutiamo attentamente l'inclusione di supporto per la gestione di attributi personalizzati, l'implementazione di una navigazione avanzata della gerarchia delle classi e lo sviluppo di strumenti per la manipolazione avanzata dei tipi.
-        \item \textbf{Ottimizzazione delle Performance:} Dedichiamo particolare attenzione all'ottimizzazione delle prestazioni con l'obiettivo di ridurre ulteriormente l'overhead introdotto durante l'invocazione di funzioni membro e l'accesso ai membri dati. Mantenendo un focus costante sull'efficienza, ci proponiamo di garantire che la libreria possa essere utilizzata in contesti ad alte prestazioni senza compromettere la sua efficienza.
-        \item \textbf{Integrazione con Tecnologie Esterne:} Esploriamo attivamente opportunità di integrazione con tecnologie e framework ampiamente adottati. La libreria potrebbe trarre beneficio da una maggiore compatibilità con sistemi di serializzazione/deserializzazione diffusi o ambienti di scripting, aprendo nuove possibilità di utilizzo in scenari complessi e eterogenei.
-        \item \textbf{Ampio Supporto per Compilatori:} Ci impegniamo a garantire che la libreria sia compatibile con una vasta gamma di compilatori C++. L'obiettivo è estendere il supporto oltre ai compilatori attualmente considerati, assicurando che la libreria sia accessibile a un pubblico più ampio di sviluppatori che utilizzano una varietà di ambienti di sviluppo.
-        \item \textbf{Documentazione Approfondita e Accessibile:} Investiamo nella creazione di una documentazione completa, chiara e accessibile. La documentazione sarà arricchita da esempi pratici, scenari d'uso dettagliati e spiegazioni tecniche. Questo sforzo mira a guidare gli sviluppatori, sia principianti che esperti, nell'uso efficace della libreria, contribuendo così alla sua adozione e successo nella community.
-        \item \textbf{Rigore nei Test e nella Validazione:} Implementiamo un sistema completo di test e validazione per garantire che la libreria funzioni correttamente in varie situazioni e configurazioni. Attraverso questo approccio rigoroso, miriamo a mantenere la stabilità e l'affidabilità della libreria nel tempo, fornendo agli sviluppatori la fiducia necessaria nell'integrazione e nell'uso della libreria.
+        \item \textbf{Enrichment of Features:} The primary goal is to enrich the reflection library by introducing new features that enhance its power and extensibility. In this context, careful consideration is given to including support for handling custom attributes, implementing advanced class hierarchy navigation, and developing tools for advanced type manipulation.
+        \item \textbf{Performance Optimization:} Special attention is devoted to performance optimization with the aim of further reducing the overhead introduced during the invocation of member functions and access to data members. Maintaining a constant focus on efficiency, we aim to ensure that the library can be used in high-performance contexts without compromising its efficiency.
+        \item \textbf{Integration with External Technologies:} Actively explore opportunities for integration with widely adopted technologies and frameworks. The library could benefit from increased compatibility with popular serialization/deserialization systems or scripting environments, opening up new possibilities for usage in complex and heterogeneous scenarios.
+        \item \textbf{Wide Compiler Support:} Commitment to ensuring that the library is compatible with a broad range of C++ compilers. The goal is to extend support beyond the currently considered compilers, ensuring the library is accessible to a broader audience of developers using various development environments.
+        \item \textbf{Comprehensive and Accessible Documentation:} Investment in creating comprehensive, clear, and accessible documentation. The documentation will be enriched with practical examples, detailed use-case scenarios, and technical explanations. This effort aims to guide developers, both beginners and experts, in the effective use of the library, contributing to its adoption and success in the community.
+        \item \textbf{Rigorous Testing and Validation:} Implementation of a comprehensive testing and validation system to ensure the library functions correctly in various situations and configurations. Through this rigorous approach, the goal is to maintain the stability and reliability of the library over time, providing developers with the necessary confidence in integrating and using the library.
     \end{itemize}
 
-\section{How templates enable high-performance scientific computing in C++}
-    Il linguaggio di programmazione C++ offre una potente struttura di templates, consentendo lo sviluppo di software flessibile senza sacrificare prestazioni. I templates permettono di definire classi e funzioni parametrizzate in termini di altri tipi e costanti. Questa caratteristica è fondamentale per la costruzione di codici scientifici astratti e ad alte prestazioni in C++. Il framework Pooma è citato come esempio, supportando il calcolo scientifico ad alte prestazioni e fornendo astrazioni matematiche e fisiche avanzate. 
-    Pooma permette una transizione agevole tra esecuzione seriale e parallela su diverse piattaforme, inclusa la supercomputing.
-    \paragraph{Come funzionano i template in C++}
-    Di seguito troverai un esempio banale di come possono essere utili i templates.
+    \section{How templates enable high-performance scientific computing in C++}
+    The C++ programming language provides a powerful template framework, allowing the development of flexible software without sacrificing performance. Templates enable the definition of parameterized classes and functions in terms of other types and constants. This feature is crucial for building abstract and high-performance scientific codes in C++. The Pooma framework is cited as an example, supporting high-performance scientific computing and providing advanced mathematical and physical abstractions.
+    
+    Pooma allows for a smooth transition between serial and parallel execution on different platforms, including supercomputing.
+    
+    \paragraph{How templates work in C++}
+    Below, you will find a simple example of how templates can be useful.
     \begin{lstlisting}[language=C++, label=code1, caption={Max function without template}]
     if (a > b) return a;
     else return b;
     \end{lstlisting}
-    Se avessimo bisogno di scrivere una versione per float, double o qualsiasi altro tipo aritmetico, il codice sarebbe esattamente lo stesso. Invece di riprodurre questo codice per ogni tipo, possiamo scrivere una funzione template (Listing \ref{code2}) per generare una funzione più generale.
+    If we needed to write a version for float, double, or any other arithmetic type, the code would be exactly the same. Instead of reproducing this code for every type, we can write a template function (Listing \ref{code2}) to generate a more general function.
     
     \begin{lstlisting}[language=C++, label=code2, caption={Max function with template}]
     template <class T>
@@ -193,97 +197,94 @@
     }
     \end{lstlisting}
     
-    Il simbolo T è un parametro del template in C++, e la sintassi "class T" può essere fuorviante perché T non deve necessariamente rappresentare una classe C++. Gli argomenti del template possono essere specificati in modo esplicito, ad esempio con `max<int>(3, 2)`, dove il compilatore crea una versione concreta di max sostituendo int a T. Tuttavia, è più comune consentire al compilatore di dedurre il tipo osservando gli argomenti, come nel caso di `max(3.0, 2.0)`, dove il compilatore genererà una versione di max con double sostituito a T.
-    Questa deduzione del tipo non è una semplice sostituzione testuale come avverrebbe con un preprocessore di macro. T è atteso abbia la semantica di un tipo, permettendo la dichiarazione di oggetti di quel tipo, come evidenziato negli argomenti e nel valore di ritorno della funzione max. In sintesi, l'utilizzo di template in C++ consente una flessibilità notevole nella creazione di funzioni e classi generiche, con la deduzione del tipo da parte del compilatore che contribuisce alla semplicità e alla chiarezza del codice.
+    The symbol T is a template parameter in C++, and the syntax "class T" can be misleading because T does not necessarily have to represent a C++ class. Template arguments can be explicitly specified, for example, with `max<int>(3, 2)`, where the compiler creates a concrete version of max by substituting int for T. However, it is more common to allow the compiler to deduce the type by observing the arguments, as in the case of `max(3.0, 2.0)`, where the compiler will generate a version of max with double substituted for T.
+    This type deduction is not a simple textual substitution, as would occur with a macro preprocessor. T is expected to have the semantics of a type, allowing the declaration of objects of that type, as highlighted in the function arguments and return value of the max function. In summary, the use of templates in C++ allows for significant flexibility in creating generic functions and classes, with compiler type deduction contributing to the simplicity and clarity of the code.
 
     \subsection{Pooma}
     \paragraph{Array Concept}
-    Quando utilizzato da solo, un array si riferisce a tutti i valori del suo dominio e a cui possono venire applicate operazioni matematica o funzioni elementari.
-    Un Array in Pooma può avere fino a sette dimensioni e possono fungere da contenitori per tipi arbitrari. 
-    Il concetto di Array di Pooma supporta domini più complessi ed inoltre, l'indicizzazione degli Array in Pooma è polimorfica; cioè, l'operazione di indicizzazione \texttt{X(i1, i2)} può eseguire la mappatura da dominio a intervallo in una varietà di modi, a seconda del tipo specifico dell'Array che viene indicizzato.
-    Analizziamo il modello del concetto di Array in Pooma, il template di classe Array.
-    Le tre richieste più importanti dal punto di vista del design generale sono:
-    • dominio arbitrario,
-    • intervallo arbitrario, e
-    • indicizzazione polimorfica.
-    Il template della classe Array in Pooma permette di creare diverse classi Array, ognuna con un diverso numero di dimensioni (Dim), tipo di elementi (T) e modalità di indicizzazione (EngineTag). Questa flessibilità consente di definire array con domini arbitrari, intervalli di output arbitrari e diversi modi di indicizzazione, contribuendo a un design generale versatile ed efficiente.
+    When used alone, an array refers to all values within its domain to which mathematical operations or elementary functions can be applied. An array in Pooma can have up to seven dimensions and can serve as containers for arbitrary types.
+    The Array concept in Pooma supports more complex domains, and furthermore, the indexing of arrays in Pooma is polymorphic. That is, the indexing operation \texttt{X(i1, i2)} can perform the mapping from domain to range in various ways, depending on the specific type of the array being indexed.
+    Let's delve into the Array concept model in Pooma, specifically the class template Array.
+    The three most important design considerations are:\\
+    • Arbitrary domain,\\
+    • Arbitrary range, and\\
+    • Polymorphic indexing.\\
+    The class template Array in Pooma allows for the creation of different Array classes, each with a different number of dimensions (Dim), element type (T), and indexing mode (EngineTag). This flexibility enables the definition of arrays with arbitrary domains, arbitrary output ranges, and different indexing modes, contributing to a versatile and efficient overall design.
     
     \paragraph{Engine}
-    Il concetto di "Engine" in Pooma è fondamentale per l'indicizzazione polimorfica nella gestione degli array multidimensionali. La classe "Array" delega la memorizzazione e la ricerca dei dati a un oggetto "Engine", il cui design è guidato da requisiti specifici per essere considerato un modello del concetto di Engine.
+    The concept of "Engine" in Pooma is fundamental for polymorphic indexing in the management of multidimensional arrays. The "Array" class delegates the storage and retrieval of data to an "Engine" object, whose design is driven by specific requirements to be considered a model of the Engine concept.
 
-    La classe "Array" è parametrizzata da tre template: Dim (dimensione del dominio), T (tipo degli elementi dell'array) e EngineTag (modalità di indicizzazione). Questa parametrizzazione consente la creazione di diverse classi Array con caratteristiche specifiche, promuovendo un design flessibile e efficiente.
+    The "Array" class is parameterized by three templates: Dim (domain dimension), T (type of array elements), and EngineTag (indexing mode). This parameterization allows the creation of different Array classes with specific characteristics, promoting a flexible and efficient design.
 
-    Il concetto di Engine è definito dai requisiti imposti dalla classe Array al suo motore. In particolare, il motore deve essere una specializzazione di un template generale "Engine" con parametri identici a quelli della classe Array. Deve inoltre definire pubblicamente un tipo chiamato "Index\_t" e fornire una versione dell'operatore "()” che accetta indici di tipo "Index\_t".
+    The concept of Engine is defined by the requirements imposed by the Array class on its engine. In particular, the engine must be a specialization of a general template "Engine" with parameters identical to those of the Array class. It must also publicly define a type called "Index\_t" and provide a version of the "()” operator that accepts indices of type "Index\_t".
 
-    L'indirezione tra Array ed Engine consente a Pooma di supportare l'indicizzazione polimorfica. Ad esempio, se il motore lavora con un dominio discreto, definisce "Index\_t" come un tipo integrale; se lavora con un dominio continuo, definisce "Index\_t" come un tipo in virgola mobile.
+    The indirection between Array and Engine allows Pooma to support polymorphic indexing. For example, if the engine works with a discrete domain, it defines "Index\_t" as an integral type; if it works with a continuous domain, it defines "Index\_t" as a floating-point type.
 
-    La classe "Array" utilizza l'operatore "()” per passare gli indici al suo oggetto "Engine". Questa separazione consente a Array di essere un modello fedele del concetto di Array, offrendo un'ampia varietà di costruttori, operatori sovraccaricati e supporto per espressioni. Al contrario, gli oggetti Engine sono interfaccia a basso livello per una sorgente dati utente-definita, con accesso diretto ai dati gestito da Array.
+    The "Array" class uses the "()” operator to pass indices to its "Engine" object. This separation allows Array to be a faithful model of the Array concept, offering a wide variety of constructors, overloaded operators, and support for expressions. In contrast, Engine objects are a low-level interface to a user-defined data source, providing direct access to data managed by Array.
 
-    L'approccio di Pooma, basato sulla separazione di interfaccia e implementazione, offre una maggiore complessità e ricchezza di funzionalità nella classe Array rispetto agli oggetti Engine, consentendo una facile estensione e personalizzazione da parte degli utenti.
-    
+    Pooma's approach, based on the separation of interface and implementation, provides greater complexity and feature richness in the Array class compared to Engine objects, allowing easy extension and customization by users.
+
+
     \subsection{Compile-time versus runtime polymorphism}
-    Il confronto tra polimorfismo a tempo di compilazione e a tempo di esecuzione evidenzia le differenze cruciali in termini di flessibilità ed efficienza nell'implementazione del concetto di Engine in Pooma.
-    L'articolo mette in evidenza il polimorfismo a tempo di compilazione, sottolineando che la conoscenza dei tipi durante la compilazione consente ottimizzazioni rilevanti. Viene confrontato con un'implementazione a tempo di esecuzione, evidenziando le limitazioni di flessibilità ed efficienza di quest'ultima.
+        The comparison between compile-time and runtime polymorphism highlights crucial differences in terms of flexibility and efficiency in implementing the Engine concept in Pooma. The article emphasizes compile-time polymorphism, emphasizing that knowledge of types during compilation allows for significant optimizations. It is contrasted with a runtime implementation, highlighting the flexibility and efficiency limitations of the latter.
 
-    La conclusione sottolinea che l'approccio a tempo di compilazione, mediante classi template e motori, offre una soluzione più flessibile ed efficiente rispetto a un'implementazione a tempo di esecuzione basata su ereditarietà e funzioni virtuali. Questa analisi può essere utile per comprendere le scelte di progettazione nell'implementazione di array multidimensionali in contesti scientifici.
+        The conclusion underscores that the compile-time approach, through class templates and engines, offers a more flexible and efficient solution compared to a runtime implementation based on inheritance and virtual functions. This analysis can be helpful in understanding design choices in the implementation of multidimensional arrays in scientific contexts.
+        
     \subsection{My Vision}
-    Nella mia visione personale, l'utilizzo dei template in C++ per il calcolo scientifico rappresenta un passo significativo verso la creazione di codice più flessibile, efficiente e facilmente manutenibile. L'approccio di parametrizzazione dei tipi offerto dai template consente agli sviluppatori di scrivere codice generico che può essere applicato a una vasta gamma di tipi di dati, contribuendo così alla creazione di librerie e framework riutilizzabili.
-    Il framework Pooma, come esemplificato nel paper, dimostra come l'uso intelligente dei template può fornire un'astrazione potente per il calcolo scientifico ad alte prestazioni. La possibilità di gestire la transizione tra esecuzione seriale e parallela su diverse piattaforme, inclusa la supercomputing, evidenzia l'adattabilità e la portabilità che i template possono offrire in contesti scientifici complessi.
-    Inoltre, l'analisi del polimorfismo a tempo di compilazione rispetto a quello a tempo di esecuzione sottolinea l'importanza di considerazioni di prestazioni e flessibilità durante la progettazione di sistemi scientifici. La capacità di effettuare ottimizzazioni durante la compilazione, grazie alla conoscenza statica dei tipi, può portare a un codice più efficiente e adattabile alle esigenze specifiche delle applicazioni scientifiche.
-    La mia visione sottolinea anche l'importanza di una comunità scientifica impegnata nel condividere best practices e esperienze nell'uso dei template. La collaborazione tra sviluppatori scientifici può contribuire alla creazione di linee guida e standard che facilitano l'adozione efficace dei template in vari contesti scientifici.
+        In my personal vision, the use of templates in C++ for scientific computing represents a significant step towards creating more flexible, efficient, and easily maintainable code. The type parameterization approach offered by templates allows developers to write generic code that can be applied to a wide range of data types, contributing to the creation of reusable libraries and frameworks.
+        
+        The Pooma framework, as exemplified in the paper, demonstrates how smart use of templates can provide a powerful abstraction for high-performance scientific computing. The ability to handle the transition between serial and parallel execution on different platforms, including supercomputing, highlights the adaptability and portability that templates can offer in complex scientific contexts.
+        
+        Furthermore, the analysis of compile-time polymorphism versus runtime polymorphism emphasizes the importance of performance and flexibility considerations when designing scientific systems. The ability to perform optimizations during compilation, thanks to static knowledge of types, can lead to more efficient code tailored to the specific needs of scientific applications.
+        
+        My vision also underscores the importance of a scientific community committed to sharing best practices and experiences in using templates. Collaboration among scientific developers can contribute to the creation of guidelines and standards that facilitate the effective adoption of templates in various scientific contexts.
 
-    In sintesi, la mia visione riflette l'entusiasmo per il potenziale dei template in C++ nel campo del calcolo scientifico e la convinzione che questa tecnologia possa continuare a guidare l'evoluzione di soluzioni software innovative e performanti.
-
+        In summary, my vision reflects enthusiasm for the potential of templates in C++ in the field of scientific computing and the belief that this technology can continue to drive the evolution of innovative and high-performance software solutions.
+\newpage
 \section{Conduit: A C++ Library for Best-effort High Performance Computing}
-Il documento introduce le sfide nello sviluppo di software per sfruttare efficacemente la capacità crescente di elaborazione parallela e distribuita. 
-Le tecniche tradizionali presuppongono la sincronizzazione tra esecuzione, comunicazione tra processi e gestione della memoria, ma ciò diventa costoso su larga scala. 
-Viene proposta la strategia della \textbf{computazione best-effort}, che rilassa i requisiti di sincronizzazione e affidabilità hardware in cambio di efficienza.
-
-La libreria \textbf{Conduit} in C++ si propone di fornire un'interfaccia preconfezionata per implementare software che utilizza la comunicazione best-effort tra thread e processi. 
-Il documento copre motivazioni, obiettivi, design e implementazione della libreria. I benchmark su problemi di colorazione di grafi e simulazioni di evoluzione digitale dimostrano che il modello best-effort di Conduit può migliorare l'efficienza di scaling e la qualità delle soluzioni.
-Viene introdotta l'idea di "computazione best-effort" dove si rilassano le dipendenze dati per ridurre la sincronizzazione, migliorando la scalabilità. Si menziona che gli algoritmi deterministici basati sulla sincronizzazione globale diventano costosi su sistemi di calcolo ad alte prestazioni. L'aspirazione alla scalabilità indefinita richiede operazioni asincrone, reti decentralizzate, componenti intercambiabili e degradazione graziosa in caso di guasti hardware.
-
-\subsection{Conduit Library}
-Conduit è una libreria C++ che mira ad integrarsi nei sistemi di programmazione parallela, fornendo un'interfaccia astratta di tipo best-effort agli sviluppatori.
-La Figura \ref{fig:Conduit} fornisce una panoramica schematica di Conduit.
-Quello che succede è che un Inlet e un Outlet possono scambiarsi messaggi tramite una procedura di comunicazione intra-thread, inter-thread o inter-processo, a seconda dello stato di runtime di un oggetto Duct sottostante e Conduit fornisce una libreria di implementazoine per fare ciò.
-
-L'oggetto \textit{Inlet} fornisce due metodi principali: \texttt{TryPut()} e \texttt{Put()}. Il metodo \texttt{TryPut()} è non bloccante e cerca di mettere in coda un messaggio per il corrispondente \textit{Outlet}. In caso di sovraccarico, il messaggio può essere eliminato. D'altra parte, il metodo \texttt{Put()} si blocca in condizioni di sovraccarico, attendendo finché lo spazio nel buffer non è disponibile per accodare il messaggio.
-
-Per quanto riguarda l'oggetto \textit{Outlet}, offre i metodi \texttt{TryStep()}, \texttt{Jump()} e \texttt{Step()}. I primi due metodi sono utilizzati per caricare il messaggio successivo o più recente, rispettivamente. Nel caso in cui non ci siano nuovi messaggi disponibili, verrà utilizzato l'ultimo messaggio ricevuto. Il metodo \texttt{Step()} si blocca fino a quando non viene ricevuto un nuovo messaggio.
-
-A livello di runtime, gli oggetti \textit{Duct} possono essere creati o modificati per gestire la comunicazione intra-thread, inter-thread o inter-processo.
-
-Oltre a questa interfaccia granulare a livello di connessione, Conduit fornisce un'interfaccia a livello di rete in cui l'utente definisce la propria computazione in termini di un grafo orientato.
-Conduit non solo offre un'interfaccia granulare a livello di connessione, ma fornisce anche un'interfaccia a livello di rete in cui gli utenti definiscono la propria computazione utilizzando un grafo orientato. In questa topologia, i nodi rappresentano elementi di simulazione, mentre gli archi indicano canali di comunicazione.
-La libreria assegna automaticamente nodi a thread disponibili su processi disponibili e istanzia i condotti corrispondenti. I singoli thread possono quindi elaborare liberamente gli aggiornamenti computazionali sui nodi loro assegnati, ricevendo contemporaneamente messaggi da nodi assegnati ad altri processi man mano che diventano disponibili. 
-Definire la logica del programma in termini di elementi di simulazione atomici che comunicano offre notevoli vantaggi in termini di programmabilità. Questo approccio consente la scrittura del codice in termini di interazioni tra oggetti intuitivi specifici del dominio  con la gestione automatica della mappatura sulle risorse hardware da parte del framework sottostante.
-Tuttavia, un'implementazione ingenua comporterebbe inefficienze significative, specialmente nella comunicazione inter-processo con un notevole overhead. 
-
-\subsection{Metodologie usate per valutare le prestazioni}
-Per verificare l'impatto sulle prestazioni dato dall'utilizzo della libreria Conduit sono stati fatti dei test che hanno seguito determinate metodologie.
-Vengono eseguiti due benchmark per confrontare l'approccio best-effort di Conduit con un modello sincrono tradizionale. 
-I benchmark vengono eseguiti sia in un contesto di memoria condivisa multithread che in un contesto distribuito multinode. 
-In ciascun contesto hardware, le prestazioni vengono valutate su due contesti algoritmici: un problema di colorazione di grafi distribuiti intensivo in comunicazione e una simulazione di evoluzione digitale intensiva in calcolo.
-
-Il benchmark relativo al problema di colorazione di grafi distribuiti è stato scelto per complementare il lavoro originale di sviluppo della libreria Conduit, al fine di supportare sistemi sperimentali su larga scala per lo studio dell'evoluzione aperta. Il benchmark relativo alla simulazione di evoluzione digitale è stato sviluppato per valutare le prestazioni della libreria in un contesto di calcolo intensivo.
-
-\subsection{Performance}
-Come già accennato, i benchmark sono stati eseguiti su due contesti algoritmici: un problema di colorazione di grafi distribuiti intensivo in comunicazione e una simulazione di evoluzione digitale intensiva in calcolo. I benchmark sono stati eseguiti sia in un contesto di memoria condivisa multithread che in un contesto distribuito multinode.
-
-Nel contesto di memoria condivisa multithread, i risultati mostrano che le prestazioni della libreria Conduit diminuiscono con l'aumentare del numero di thread, ma che l'approccio best-effort di Conduit è comunque in grado di fornire prestazioni migliori rispetto al modello sincrono tradizionale. In particolare, il benchmark relativo al problema di colorazione di grafi distribuiti ha mostrato che l'approccio best-effort di Conduit ha permesso di ottenere una soluzione di qualità migliore rispetto al modello sincrono tradizionale, entro un determinato limite di tempo. Il benchmark relativo alla simulazione di evoluzione digitale ha mostrato che l'approccio best-effort di Conduit ha permesso di ottenere un aumento significativo delle prestazioni rispetto al modello sincrono tradizionale.
-
-Nel contesto distribuito multinode, i risultati mostrano che l'approccio best-effort di Conduit è in grado di fornire prestazioni migliori rispetto al modello sincrono tradizionale, soprattutto in contesti di calcolo intensivo. In particolare, il benchmark relativo alla simulazione di evoluzione digitale ha mostrato che l'approccio best-effort di Conduit ha permesso di ottenere un aumento significativo delle prestazioni rispetto al modello sincrono tradizionale, con un speedup di circa 2,1x rispetto all'esecuzione completamente sincrona.
-
-In generale, i risultati dei benchmark dimostrano che l'approccio best-effort di Conduit è in grado di fornire prestazioni migliori rispetto al modello sincrono tradizionale in contesti di calcolo ad alte prestazioni, soprattutto in contesti di calcolo intensivo. Gli autori del paper concludono che la libreria Conduit può essere utilizzata per ridurre le barriere di esperienza nel dominio e di programmabilità per sfruttare in modo efficiente la crescente potenza di calcolo parallelo e distribuito.
-
-\subsection{My Vision}
-Nel mio parere, l'articolo fornisce una visione interessante sull'implementazione di un'interfaccia best-effort per la comunicazione tra thread e processi in contesti di calcolo ad alte prestazioni. L'approccio best-effort presentato nella libreria Conduit sembra offrire vantaggi significativi in termini di prestazioni, soprattutto in contesti di calcolo intensivo e distribuito.
-Tuttavia, ritengo che l'articolo potrebbe essere migliorato includendo una discussione più dettagliata sulle sfide e le limitazioni dell'approccio best-effort. Ad esempio, potrebbe essere utile esplorare in modo più approfondito i potenziali trade-off tra prestazioni e affidabilità nell'ambito dell'approccio best-effort, nonché le strategie per gestire eventuali perdite di dati o ritardi nella comunicazione.
-Inoltre, sarebbe interessante vedere ulteriori esempi di casi d'uso pratici della libreria Conduit in contesti reali di calcolo ad alte prestazioni. Questi casi d'uso potrebbero aiutare a dimostrare l'efficacia e l'applicabilità dell'approccio best-effort in una varietà di scenari applicativi.
-Infine, sarebbe utile includere una sezione dedicata alle future direzioni di ricerca e sviluppo per la libreria Conduit. Questa sezione potrebbe esplorare potenziali miglioramenti o estensioni della libreria, nonché possibili applicazioni in nuovi settori o domini di calcolo ad alte prestazioni.
-
-In sintesi, l'articolo offre una visione promettente sull'implementazione di un'interfaccia best-effort per la comunicazione in contesti di calcolo ad alte prestazioni, ma potrebbe beneficiare di una maggiore approfondimento delle sfide e delle opportunità future.
+    The document introduces the challenges in developing software to effectively harness the growing capacity of parallel and distributed computing. Traditional techniques assume synchronization between execution, inter-process communication, and memory management, but this becomes costly at large scale. The \textbf{best-effort computing} strategy is proposed, relaxing synchronization and hardware reliability requirements in exchange for efficiency.
+    
+    The \textbf{Conduit} library in C++ aims to provide a pre-packaged interface for implementing software that utilizes best-effort communication between threads and processes. The document covers motivations, objectives, design, and implementation of the library. Benchmarks on graph coloring problems and digital evolution simulations demonstrate that Conduit's best-effort model can improve scaling efficiency and solution quality.
+    
+    The concept of "best-effort computing" is introduced, where data dependencies are relaxed to reduce synchronization, improving scalability. It is mentioned that deterministic algorithms based on global synchronization become expensive on high-performance computing systems. The aspiration for indefinite scalability requires asynchronous operations, decentralized networks, interchangeable components, and graceful degradation in case of hardware failures.
+    
+    \subsection{Conduit Library}
+    Conduit is a C++ library designed to integrate with parallel programming systems, providing an abstract best-effort interface to developers. Figure \ref{fig:Conduit} provides a schematic overview of Conduit. In this architecture, an Inlet and an Outlet can exchange messages through an intra-thread, inter-thread, or inter-process communication procedure, depending on the runtime state of an underlying Duct object, and Conduit provides an implementation library to achieve this.
+    
+    The \textit{Inlet} object provides two main methods: \texttt{TryPut()} and \texttt{Put()}. The \texttt{TryPut()} method is non-blocking and attempts to enqueue a message for the corresponding \textit{Outlet}. In case of overload, the message may be discarded. On the other hand, the \texttt{Put()} method blocks under overload conditions, waiting until space in the buffer is available to enqueue the message.
+    
+    Regarding the \textit{Outlet} object, it offers the methods \texttt{TryStep()}, \texttt{Jump()}, and \texttt{Step()}. The first two methods are used to fetch the next or most recent message, respectively. In case there are no new messages available, the last received message will be used. The \texttt{Step()} method blocks until a new message is received.
+    
+    At the runtime level, \textit{Duct} objects can be created or modified to handle intra-thread, inter-thread, or inter-process communication.
+    
+    In addition to this fine-grained connection-level interface, Conduit provides a network-level interface where the user defines their computation in terms of a directed graph. Conduit not only offers a fine-grained connection-level interface but also provides a network-level interface where users define their computation using a directed graph. In this topology, nodes represent simulation elements, while edges indicate communication channels. The library automatically assigns nodes to available threads on available processes and instantiates the corresponding ducts. Individual threads can then freely process computational updates on their assigned nodes, concurrently receiving messages from nodes assigned to other processes as they become available.
+    Defining program logic in terms of atomic simulation elements that communicate offers significant advantages in terms of programmability. This approach allows writing code in terms of interactions between intuitive domain-specific objects, with automatic mapping to hardware resources handled by the underlying framework.
+    However, a naive implementation would result in significant inefficiencies, especially in inter-process communication with considerable overhead.
+    
+    \subsection{Methodologies Used for Performance Evaluation}
+    To assess the performance impact of using the Conduit library, tests were conducted following specific methodologies. Two benchmarks are executed to compare Conduit's best-effort approach with a traditional synchronous model.
+    
+    The benchmarks are conducted in both a multithreaded shared-memory context and a multinode distributed context. In each hardware context, performance is evaluated on two algorithmic contexts: a distributed graph coloring problem intensive in communication and a digital evolution simulation intensive in computation.
+    
+    The benchmark related to the distributed graph coloring problem was chosen to complement the original development work of the Conduit library, aiming to support large-scale experimental systems for the study of open evolution. The benchmark related to digital evolution simulation was developed to assess the library's performance in an intensive computational context.
+    
+    \subsection{Performance}
+    As mentioned earlier, benchmarks were conducted on two algorithmic contexts: a distributed graph coloring problem intensive in communication and a digital evolution simulation intensive in computation. The benchmarks were executed in both a multithreaded shared-memory context and a multinode distributed context.
+    
+    In the multithreaded shared-memory context, the results show that Conduit's library performance decreases with an increasing number of threads. However, Conduit's best-effort approach still provides better performance compared to the traditional synchronous model. Specifically, the benchmark related to the distributed graph coloring problem demonstrated that Conduit's best-effort approach achieved a better quality solution compared to the traditional synchronous model within a certain time limit. The benchmark related to digital evolution simulation showed that Conduit's best-effort approach significantly increased performance compared to the traditional synchronous model.
+    
+    In the multinode distributed context, the results indicate that Conduit's best-effort approach can deliver better performance than the traditional synchronous model, especially in intensive computational contexts. Particularly, the benchmark related to digital evolution simulation showed that Conduit's best-effort approach led to a significant performance increase compared to the traditional synchronous model, with a speedup of approximately 2.1x compared to fully synchronous execution.
+    
+    Overall, the benchmark results demonstrate that Conduit's best-effort approach can provide better performance than the traditional synchronous model in high-performance computing contexts, particularly in intensive computational scenarios. The authors of the paper conclude that the Conduit library can be used to reduce experience and programmability barriers in leveraging the growing power of parallel and distributed computing efficiently.
+    
+    \subsection{My Vision}
+    In my opinion, the article provides an intriguing insight into implementing a best-effort communication interface between threads and processes in high-performance computing contexts. The best-effort approach presented in the Conduit library appears to offer significant performance advantages, especially in intensive and distributed computing scenarios.
+    However, I believe the article could be enhanced by including a more detailed discussion of the challenges and limitations of the best-effort approach. For instance, it might be useful to delve more deeply into potential trade-offs between performance and reliability within the realm of the best-effort approach, as well as strategies for handling potential data losses or communication delays.
+    Furthermore, it would be interesting to see additional examples of practical use cases for the Conduit library in real-world high-performance computing environments. These use cases could help demonstrate the effectiveness and applicability of the best-effort approach in a variety of application scenarios.
+    Finally, it would be beneficial to include a dedicated section on future research and development directions for the Conduit library. This section could explore potential enhancements or extensions of the library, as well as possible applications in new sectors or domains of high-performance computing.
+    
+    In summary, the article provides a promising outlook on implementing a best-effort interface for communication in high-performance computing contexts, but could benefit from a deeper exploration of challenges and future opportunities.
+    
 \end{multicols*}
 
 \begin{figure}
@@ -299,5 +300,5 @@ In sintesi, l'articolo offre una visione promettente sull'implementazione di un'
     \caption{Conduit Scheme}
     \label{fig:Conduit}
 \end{figure}
-
+\clearpage
 \printbibliography\end{document}
