@@ -14,7 +14,7 @@ Il progetto si concentra su strategie avanzate per massimizzare le prestazioni n
 ## Istruzioni
 1. Clonare la repository sul proprio sistema.
 2. Consultare il documento PDF nella cartella "Latex" per una visione completa del paper.
-3. Consultare il codice sorgente contenuto in [AdvancedProgrammingCpp-C](https://github.com/Alessandro-Castelli/AdvancedProgrammingCpp-C)
+3. Consultare il codice sorgente (che tratta di algoritmi generali ad alte prestazioni in C++, non delle librerie specifiche presentate nel papar) contenuto in [AdvancedProgrammingCpp-C](https://github.com/Alessandro-Castelli/AdvancedProgrammingCpp-C)
 
 Risultati di alto livello sono stati ottenuti utilizzando queste strategie avanzate in contesti di calcolo intensivo. Si consiglia vivamente di esplorare il documento per approfondire la comprensione delle pratiche proposte.
 ---
@@ -30,7 +30,7 @@ The paper focuses on advanced techniques for achieving high performance using th
 
 ## Repository Contents
 - **Documentation**: Refer to the PDF document in the "Latex" folder for a thorough understanding of the discussed techniques.
-- **Source Code**: This repository does not contain source code, but it provides ideas and libraries that can be used. If you want to explore source code for high-performance C++, please refer to the [AdvancedProgrammingCpp-C](https://github.com/Alessandro-Castelli/AdvancedProgrammingCpp-C) repository.
+- **Source Code**: This repository does not contain source code, but it provides ideas and libraries that can be used. If you want to explore source code for high-performance C++ (general, not specific code), please refer to the [AdvancedProgrammingCpp-C](https://github.com/Alessandro-Castelli/AdvancedProgrammingCpp-C) repository.
 
 ## Abstract of the Paper
 The project focuses on advanced strategies to maximize performance in the field of C++ programming. Techniques such as compiler optimizations, efficient memory usage, parallelization, and more are explored.
