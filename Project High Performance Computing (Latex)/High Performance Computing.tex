@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
 % Impostazioni del documento
-\usepackage[a4paper,top=2cm,bottom=2cm,left=1cm,right=1cm,marginparwidth=2.5cm]{geometry}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=1.5cm,right=1.5cm,marginparwidth=2.5cm]{geometry}
 \usepackage{parskip} % Spazio tra i paragrafi
 \usepackage{setspace} % Interlinea
 \onehalfspacing% Interlinea 1.5
@@ -240,7 +240,7 @@
         My vision also underscores the importance of a scientific community committed to sharing best practices and experiences in using templates. Collaboration among scientific developers can contribute to the creation of guidelines and standards that facilitate the effective adoption of templates in various scientific contexts.
 
         In summary, my vision reflects enthusiasm for the potential of templates in C++ in the field of scientific computing and the belief that this technology can continue to drive the evolution of innovative and high-performance software solutions.
-\newpage
+
 \section{Conduit: A C++ Library for Best-effort High Performance Computing}
     The document introduces the challenges in developing software to effectively harness the growing capacity of parallel and distributed computing. Traditional techniques assume synchronization between execution, inter-process communication, and memory management, but this becomes costly at large scale. The \textbf{best-effort computing} strategy is proposed, relaxing synchronization and hardware reliability requirements in exchange for efficiency.
     
@@ -284,7 +284,22 @@
     Finally, it would be beneficial to include a dedicated section on future research and development directions for the Conduit library. This section could explore potential enhancements or extensions of the library, as well as possible applications in new sectors or domains of high-performance computing.
     
     In summary, the article provides a promising outlook on implementing a best-effort interface for communication in high-performance computing contexts, but could benefit from a deeper exploration of challenges and future opportunities.
-    
+\section{Conclusion}
+In conclusion, the three articles presented in this document provide valuable insights into the use of C++ in high-performance computing.
+
+The first article discusses the reflection system for C++, which enables dynamic manipulation of program objects and functions during runtime. This system can be used to create more flexible and extensible software but also introduces some overhead that must be carefully managed.
+
+The second article highlights the power of templates in the development of high-performance scientific code. Templates allow the definition of parameterized classes and functions in terms of other types and constants, crucial for creating abstract and high-performance scientific codes in C++. The Pooma framework is cited as an example of a library that supports high-performance scientific computing and provides advanced mathematical and physical abstractions.
+
+The third article introduces the Conduit library, which provides an interface for implementing software using "best-effort" communication between threads and processes. This approach relaxes hardware synchronization and reliability requirements in exchange for efficiency, and the benchmarks presented in the article demonstrate that Conduit's "best-effort" model can improve scalability efficiency and solution quality.
+
+Overall, these articles demonstrate the importance of carefully managing performance and flexibility considerations in the design of scientific systems in C++. Collaboration among scientific developers can contribute to the creation of guidelines and standards that facilitate the effective adoption of these technologies in various scientific contexts.
+
+However, it is important to emphasize that there are still challenges and limitations to address in the field of high-performance computing. For example, the "best-effort" approach presented in the Conduit library could introduce potential trade-offs between performance and reliability, and strategies for managing potential data losses or communication delays must be carefully considered.
+
+To have a comprehensive study, it would have been necessary to have access to the libraries and be able to use them for the purpose of conducting customized performance tests. Still, this was an advanced task that went beyond the scope of this document, which is written with the purpose of being more compilative than experimental.
+
+In the future, it will be interesting to see how these technologies continue to evolve and how they can be applied to new sectors or areas of high-performance computing. Further research and developments will be necessary to fully realize the potential of C++ in this field.
 \end{multicols*}
 
 \begin{figure}

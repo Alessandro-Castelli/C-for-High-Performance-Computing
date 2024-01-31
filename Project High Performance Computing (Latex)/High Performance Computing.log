@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.13)  31 JAN 2024 15:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.13)  31 JAN 2024 17:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -597,14 +597,14 @@ LaTeX Font Info:    ... okay on input line 45.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(28.45274pt, 540.60239pt, 28.45274pt)
+* h-part:(L,W,R)=(42.67912pt, 512.14963pt, 42.67912pt)
 * v-part:(T,H,B)=(56.9055pt, 731.23584pt, 56.9055pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=540.60239pt
+* \textwidth=512.14963pt
 * \textheight=731.23584pt
-* \oddsidemargin=-43.81725pt
-* \evensidemargin=-43.81725pt
+* \oddsidemargin=-29.59087pt
+* \evensidemargin=-29.59087pt
 * \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -664,11 +664,11 @@ Package biblatex Info: ... file '"High Performance Computing".bbl' found.
 Package biblatex Info: Reference section=0 on input line 45.
 Package biblatex Info: Reference segment=0 on input line 45.
 \c@lstlisting=\count431
-<aau.png, id=63, 314.17375pt x 318.18875pt>
+<aau.png, id=67, 314.17375pt x 318.18875pt>
 File: aau.png Graphic file (type png)
 <use aau.png>
 Package pdftex.def Info: aau.png  used on input line 49.
-(pdftex.def)             Requested size: 270.3012pt x 273.76807pt.
+(pdftex.def)             Requested size: 256.07481pt x 259.35794pt.
  [1
 
 {C:/Users/ales2/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/ales2/MiKTeX/fonts/enc/dvips/base/8r.enc} <./aau.png>]
@@ -676,23 +676,13 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 64
  (C:\Users\ales2\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Underfull \hbox (badness 6542) in paragraph at lines 68--69
-[]\T1/ptm/m/it/10.95 C++ Re-flec-tion for High Per-for-mance Prob-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
-\T1/ptm/m/it/10.95 lem Solv-ing En-vi-ron-ments \T1/ptm/m/n/10.95 [[][]1[][]], avail-able at:
- []
-
-
-Underfull \hbox (badness 6236) in paragraph at lines 69--70
-\T1/ptm/m/it/10.95 en-tific Com-put-ing in C++ \T1/ptm/m/n/10.95 [[][]2[][]], avail-able at:
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 70--71
+Underfull \hbox (badness 5939) in paragraph at lines 70--71
 []\T1/ptm/m/it/10.95 Conduit: A C++ Li-brary for Best-Effort
+ []
+
+
+Overfull \hbox (8.91098pt too wide) in paragraph at lines 77--77
+[]\T1/ptm/b/n/14.4 C++ Re-flec-tion for High-Performance
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 80.
@@ -742,29 +732,33 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 10
  (C:\Users\ales2\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [2] [3]
-Overfull \hbox (1.64731pt too wide) in paragraph at lines 157--160
-\T1/ptm/m/n/10.95 Member func-tions are rep-re-sented by the \T1/cmtt/m/n/10.95 MemberFunction
- []
-
-
-Overfull \hbox (12.39615pt too wide) in paragraph at lines 178--178
-[]\T1/ptm/b/n/14.4 How tem-plates en-able high-performance
+Underfull \hbox (badness 10000) in paragraph at lines 157--160
+\T1/ptm/m/n/10.95 Member func-tions are rep-re-sented by the
  []
 
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 178--178
+[]\T1/ptm/b/n/14.4 How tem-plates en-able high-
+ []
+
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 185.
- [5] [6] [7] [8]
-<ClassType.png, id=152, 362.5545pt x 145.7445pt>
+[5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 264--264
+[]\T1/ptm/b/n/12 Methodologies Used for Per-for-mance
+ []
+
+[8] [9]
+<ClassType.png, id=160, 362.5545pt x 145.7445pt>
 File: ClassType.png Graphic file (type png)
 <use ClassType.png>
-Package pdftex.def Info: ClassType.png  used on input line 292.
-(pdftex.def)             Requested size: 270.3012pt x 108.66539pt.
-<Conduit.png, id=153, 174.6525pt x 97.5645pt>
+Package pdftex.def Info: ClassType.png  used on input line 307.
+(pdftex.def)             Requested size: 256.07481pt x 102.94559pt.
+<Conduit.png, id=161, 174.6525pt x 97.5645pt>
 File: Conduit.png Graphic file (type png)
 <use Conduit.png>
-Package pdftex.def Info: Conduit.png  used on input line 299.
-(pdftex.def)             Requested size: 270.3012pt x 151.01793pt.
- [9 <./ClassType.png> <./Conduit.png>] [10
+Package pdftex.def Info: Conduit.png  used on input line 314.
+(pdftex.def)             Requested size: 256.07481pt x 143.0697pt.
+ [10 <./ClassType.png> <./Conduit.png>] [11
 
 ] (High Performance Computing.aux)
  ***********
@@ -772,23 +766,23 @@ LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
  ***********
 Package rerunfilecheck Info: File `"High Performance Computing".out' has not changed.
-(rerunfilecheck)             Checksum: 67D81869C6AB8ECA22ED4D798B436CE9;3027.
+(rerunfilecheck)             Checksum: 4E32163A1EE8B46B6487FA86109C4077;3121.
 Package logreq Info: Writing requests to '"High Performance Computing".run.xml'.
 \openout1 = `"High Performance Computing.run.xml"'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19500 strings out of 474491
- 332345 string characters out of 5754620
+ 19503 strings out of 474491
+ 332372 string characters out of 5754620
  1971473 words of memory out of 5000000
- 41497 multiletter control sequences out of 15000+600000
+ 41498 multiletter control sequences out of 15000+600000
  609706 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,8n,81p,1103b,1400s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ales2\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ales2/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ales2/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ales2/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "High Performance Computing.pdf" (11 pages, 201656 bytes).
+Output written on "High Performance Computing.pdf" (12 pages, 205016 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
- 64 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 PDF objects out of 1000 (max. 8388607)
+ 66 named destinations out of 1000 (max. 500000)
+ 144 words of extra memory for PDF output out of 10000 (max. 10000000)
 
