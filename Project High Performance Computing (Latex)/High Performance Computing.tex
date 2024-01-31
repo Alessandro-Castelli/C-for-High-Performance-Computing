@@ -73,9 +73,14 @@
     Nel seguito del documento, verranno esposti gli argomenti trattati nei singoli articoli insieme alle relative metodologie, risultati e considerazioni critiche sulle implementazioni proposte.
 
     \section{C++ Reflection for High Performance Problem Solving Environments}
-    L'articolo discute l'importanza degli Ambienti di Risoluzione dei Problemi (PSE), sistemi informatici che forniscono le risorse necessarie per risolvere specifiche classi di problemi. Tali PSE dovrebbero includere metodi avanzati di soluzione, selezione automatica o semi-automatica dei metodi, e la capacità di incorporare nuovi approcci.
-    Nel calcolo scientifico, i PSE devono affrontare compiti intensivi in termini di CPU, spesso sviluppati come componenti in linguaggi ad alte prestazioni. L'articolo sostiene che i PSE dovrebbero consentire il dinamico accoppiamento di compiti, con un'interfaccia utente grafica o uno scripting ambiente. Tuttavia, la mancanza di riflessione nei moderni linguaggi HPC porta gli sviluppatori di PSE a dipendere da linguaggi come Java, causando inconvenienti.
-    L'articolo propone l'implementazione di funzionalità (di una libreria) di riflessione non invasiva e conformi agli standard in C++, dimostrando che questo può essere fatto in modo efficiente. Confronta il sovraccarico della riflessione con altri metodi e suggerisce che la sua implementazione è l'unico modo per incorporare funzionalità di riflessione in C++ in modo conforme agli standard e non invasivo.
+    L'articolo discute l'importanza degli Ambienti di Risoluzione dei Problemi (PSE), sistemi informatici che forniscono le risorse necessarie per risolvere specifiche classi di problemi. 
+    Tali PSE dovrebbero includere metodi avanzati di soluzione, selezione automatica o semi-automatica dei metodi, e la capacità di incorporare nuovi approcci.
+    Nel calcolo scientifico, i PSE devono affrontare compiti intensivi in termini di CPU, spesso sviluppati come componenti in linguaggi ad alte prestazioni. 
+    L'articolo sostiene che i PSE dovrebbero consentire il \textbf{dinamico accoppiamento di compiti}, con un'interfaccia utente grafica o uno scripting ambiente. 
+    Tuttavia, la mancanza di riflessione\footnote{
+        La riflessione nei linguaggi di programmazione indica la capacità di un programma di esaminare e modificare la sua struttura e comportamento durante l'esecuzione. In pratica, un linguaggio di programmazione riflessivo permette al programma di "osservare se stesso" e di apportare modifiche dinamiche alla sua esecuzione. Questo concetto si divide principalmente in riflessione di tipo, che riguarda l'analisi dinamica dei tipi di dati, e riflessione di dati, che si occupa della manipolazione dinamica dei dati durante l'esecuzione.} nei moderni linguaggi HPC porta gli sviluppatori di PSE a dipendere da linguaggi come Java, causando inconvenienti.
+    \textbf{L'articolo propone l'implementazione di funzionalità (di una libreria) di riflessione non invasiva e conformi agli standard in C++}, dimostrando che questo può essere fatto in modo efficiente. 
+    Confronta il sovraccarico della riflessione con altri metodi e suggerisce che la sua implementazione è l'unico modo per incorporare funzionalità di riflessione in C++ in modo conforme agli standard e non invasivo.
     L'articolo discute i due tipi di riflessione a livello di codice: in fase di compilazione e in fase di esecuzione. La riflessione in fase di compilazione consente l'accesso alle informazioni sul tipo durante la compilazione, facilitando la programmazione generica, mentre la riflessione in fase di esecuzione offre la capacità di accedere dinamicamente alle informazioni sul tipo durante l'esecuzione del programma.
     Mentre linguaggi come Java, C\# e Python supportano la riflessione come parte delle loro specifiche standard, C++ fornisce solo funzionalità limitate tramite le informazioni sul tipo in fase di esecuzione (RTTI). Visual C++ ha estensioni per la riflessione, ma con limitata portabilità. Per l'elaborazione ad alte prestazioni, Java e C\# sono limitati, mentre Fortran domina, ma C++ è preferito per il middleware.
     La riflessione in fase di esecuzione richiede la generazione separata di metadati come codice C++ effettivo, poiché i compilatori C++ non generano automaticamente i metadati richiesti. L'articolo propone che C++ dovrebbe supportare la riflessione in modo standard e non intrusivo, e mostra come questo può essere fatto in modo efficiente.
@@ -174,10 +179,8 @@
     \paragraph{Come funzionano i template in C++}
     Di seguito troverai un esempio banale di come possono essere utili i templates.
     \begin{lstlisting}[language=C++, label=code1, caption={Max function without template}]
-    {
     if (a > b) return a;
     else return b;
-    }
     \end{lstlisting}
     Se avessimo bisogno di scrivere una versione per float, double o qualsiasi altro tipo aritmetico, il codice sarebbe esattamente lo stesso. Invece di riprodurre questo codice per ogni tipo, possiamo scrivere una funzione template (Listing \ref{code2}) per generare una funzione più generale.
     
@@ -195,7 +198,7 @@
 
     \subsection{Pooma}
     \paragraph{Array Concept}
-    Quando utilizzato da solo, un array si riferisce a tutti i alori del suo dominio e a cui possono venire applicate operazioni matematica o funzioni elementari.
+    Quando utilizzato da solo, un array si riferisce a tutti i valori del suo dominio e a cui possono venire applicate operazioni matematica o funzioni elementari.
     Un Array in Pooma può avere fino a sette dimensioni e possono fungere da contenitori per tipi arbitrari. 
     Il concetto di Array di Pooma supporta domini più complessi ed inoltre, l'indicizzazione degli Array in Pooma è polimorfica; cioè, l'operazione di indicizzazione \texttt{X(i1, i2)} può eseguire la mappatura da dominio a intervallo in una varietà di modi, a seconda del tipo specifico dell'Array che viene indicizzato.
     Analizziamo il modello del concetto di Array in Pooma, il template di classe Array.

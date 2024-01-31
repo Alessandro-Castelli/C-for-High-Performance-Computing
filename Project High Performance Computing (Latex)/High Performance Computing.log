@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.13)  30 JAN 2024 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.12.13)  31 JAN 2024 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/ales2/Desktop/Advance Programming in C/C++ for High-Performance Computing/Project High Performance Computing/High Performance Computing.tex"
-(c:/Users/ales2/Desktop/Advance Programming in C/C++ for High-Performance Computing/Project High Performance Computing/High Performance Computing.tex
+**"c:/Users/ales2/Desktop/Advance Programming in C/C++ for High-Performance Computing/Project High Performance Computing (Latex)/High Performance Computing.tex"
+(c:/Users/ales2/Desktop/Advance Programming in C/C++ for High-Performance Computing/Project High Performance Computing (Latex)/High Performance Computing.tex
 LaTeX2e <2023-11-01>
 L3 programming layer <2023-12-08>
 (C:\Users\ales2\MiKTeX\tex/latex/base\article.cls
@@ -676,42 +676,79 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 64
  (C:\Users\ales2\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 76--82
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 80.
+ (C:\Users\ales2\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 80.
+ (C:\Users\ales2\MiKTeX\tex/latex/psnfss\omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 80.
+ (C:\Users\ales2\MiKTeX\tex/latex/psnfss\omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 80.
+ (C:\Users\ales2\MiKTeX\tex/latex/psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 80.
+ (C:\Users\ales2\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--87
 \T1/ptm/m/n/10.95 L'articolo dis-cute l'importanza degli Am-bi-enti di
  []
+
+
+Package multicol Warning: I moved some lines to the next page.
+(multicol)                Footnotes on page 1 might be wrong on input line 92.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.94         \item
-                   \textbf{Configurabilità dinamica:} Utilizzando la rifles... [1]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 94.
+l.92         obj 
+                 = classType.createInstance(); [1]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 99.
  (C:\Users\ales2\MiKTeX\tex/latex/psnfss\ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [2]
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 []\T1/ptm/b/n/10.95 Efficienza: \T1/ptm/m/n/10.95 Ridurre al min-imo l'overhead
  []
 
 [3]
-Underfull \hbox (badness 5578) in paragraph at lines 164--165
+Underfull \hbox (badness 5578) in paragraph at lines 169--170
 []\T1/ptm/b/n/10.95 Ottimizzazione delle Per-for-mance: \T1/ptm/m/n/10.95 Dedichi-
  []
 
 [4]
-Overfull \hbox (12.39615pt too wide) in paragraph at lines 171--171
+Overfull \hbox (12.39615pt too wide) in paragraph at lines 176--176
 []\T1/ptm/b/n/14.4 How tem-plates en-able high-performance
  []
 
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 176.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 181.
 [5] [6] [7]
-Underfull \hbox (badness 7273) in paragraph at lines 275--276
+Underfull \hbox (badness 7273) in paragraph at lines 278--279
 []\T1/ptm/m/n/10.95 In gen-erale, i risul-tati dei bench-mark di-mostrano
  []
 
 [8]
-Underfull \hbox (badness 5431) in paragraph at lines 283--284
+Underfull \hbox (badness 5431) in paragraph at lines 286--287
 []\T1/ptm/m/n/10.95 In sin-tesi, l'articolo of-fre una vi-sione promet-tente
  []
 
@@ -719,39 +756,13 @@ Underfull \hbox (badness 5431) in paragraph at lines 283--284
 <ClassType.png, id=150, 362.5545pt x 145.7445pt>
 File: ClassType.png Graphic file (type png)
 <use ClassType.png>
-Package pdftex.def Info: ClassType.png  used on input line 288.
+Package pdftex.def Info: ClassType.png  used on input line 291.
 (pdftex.def)             Requested size: 270.3012pt x 108.66539pt.
 <Conduit.png, id=151, 174.6525pt x 97.5645pt>
 File: Conduit.png Graphic file (type png)
 <use Conduit.png>
-Package pdftex.def Info: Conduit.png  used on input line 295.
+Package pdftex.def Info: Conduit.png  used on input line 298.
 (pdftex.def)             Requested size: 270.3012pt x 151.01793pt.
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 300.
- (C:\Users\ales2\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 300.
- (C:\Users\ales2\MiKTeX\tex/latex/psnfss\omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 300.
- (C:\Users\ales2\MiKTeX\tex/latex/psnfss\omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 300.
- (C:\Users\ales2\MiKTeX\tex/latex/psnfss\omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 300.
- (C:\Users\ales2\MiKTeX\tex/latex/psnfss\ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 300.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 300.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 300.
  [10 <./ClassType.png> <./Conduit.png>] (High Performance Computing.aux)
  ***********
 LaTeX2e <2023-11-01>
@@ -764,17 +775,17 @@ Package logreq Info: Writing requests to '"High Performance Computing".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19474 strings out of 474491
- 331900 string characters out of 5754620
- 1973473 words of memory out of 5000000
- 41472 multiletter control sequences out of 15000+600000
- 596132 words of font info for 76 fonts, out of 8000000 for 9000
+ 19498 strings out of 474491
+ 332307 string characters out of 5754620
+ 1972473 words of memory out of 5000000
+ 41495 multiletter control sequences out of 15000+600000
+ 609706 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,81p,1118b,1422s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 66i,8n,81p,1126b,2185s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\ales2\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/ales2/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/ales2/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/ales2/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "High Performance Computing.pdf" (11 pages, 202570 bytes).
+Output written on "High Performance Computing.pdf" (11 pages, 203486 bytes).
 PDF statistics:
  236 PDF objects out of 1000 (max. 8388607)
- 65 named destinations out of 1000 (max. 500000)
+ 64 named destinations out of 1000 (max. 500000)
  120 words of extra memory for PDF output out of 10000 (max. 10000000)
 
